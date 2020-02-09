@@ -11,7 +11,7 @@ usethis::use_build_ignore("tools")
 usethis::use_lifecycle()
 
 # License
-usethis::use_gpl3_license("costverse")
+usethis::use_gpl3_license("Technomics, Inc.")
 
 ## ===== DESCRIPTION =====
 
@@ -24,14 +24,11 @@ description <- list(Description = "Package with miscellaneous functions used thr
 # Run this to set description. It will replace whatever is there! Keep in mind the version before doing this.
 # usethis::use_description(description)
 
+usethis::use_data_raw()
+
 # Package dependencies
 usethis::use_pipe()
-#usethis::use_package("dplyr", min_version = "0.8.3")
-#usethis::use_package("tidyr", min_version = "1.0.0")
-#usethis::use_package("tibble", min_version = "2.0.0")
-#usethis::use_package("purrr", min_version = "0.3.3")
-#usethis::use_package("rlang", min_version = "0.4.2")
-#usethis::use_package("pillar", min_version = "1.4.0")
+usethis::use_package("cli", min_version = "2.0.0")
 usethis::use_package("stringr", min_version = "1.4.0")
 usethis::use_package("lifecycle")
 

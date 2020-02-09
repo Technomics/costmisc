@@ -11,7 +11,8 @@ Description: Package with miscellaneous functions used
 License: GPL-3
 Imports: 
     stringr (>= 1.4.0),
-    lifecycle
+    lifecycle,
+    cli (>= 2.0.0)
 RdMacros: 
     lifecycle
 Encoding: UTF-8
