@@ -1,0 +1,20 @@
+Package: costmisc
+Title: Misc costverse functions
+Version: 0.1.0
+Authors@R: 
+    person(given = "Adam H.",
+           family = "James",
+           role = c("cre", "aut"),
+           email = "ajames@technomics.net")
+Description: Package with miscellaneous functions used
+    throughout the costverse.
+License: GPL-3
+Imports: 
+    stringr (>= 1.4.0),
+    lifecycle
+RdMacros: 
+    lifecycle
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.0.2
