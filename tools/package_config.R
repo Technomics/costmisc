@@ -13,6 +13,9 @@ usethis::use_lifecycle()
 # License
 usethis::use_gpl3_license("Technomics, Inc.")
 
+# Site
+usethis::use_pkgdown()
+
 ## ===== DESCRIPTION =====
 
 # Description list
@@ -39,7 +42,7 @@ usethis::use_readme_rmd()
 usethis::use_news_md()
 
 usethis::use_lifecycle_badge("questioning")
-#usethis::use_badge("Build: passing", "https://gitlab.technomics.net/ajames/ff2db", "https://img.shields.io/badge/build-passing-green.svg")
+#usethis::use_badge("Build: passing", "https://gitlab.technomics.net/costverse/costmisc", "https://img.shields.io/badge/build-passing-green.svg")
 usethis::use_badge("License: GPLv3", "https://opensource.org/licenses/GPL-3.0", "https://img.shields.io/badge/License-GPLv3-blue.svg")
 
 
@@ -55,6 +58,8 @@ devtools::load_all()
 
 devtools::build(binary = TRUE)
 devtools::build()
+
+devtools::build_site()
 
 detach("package:costmisc", unload = TRUE)
 
