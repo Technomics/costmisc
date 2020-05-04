@@ -6,7 +6,6 @@
 #'
 #' \lifecycle{questioning}
 #'
-#' Questioning location. Should probably be in \code{costmisc} or something else. \cr
 #' \cr
 #' \code{read_folder()} is a wrapper around \code{lapply} to read an entire folder of files
 #' into a list. No file checking is implemented, so each file in the target folder must be
