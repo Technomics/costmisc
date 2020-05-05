@@ -1,4 +1,4 @@
-# costmisc 0.1.1
+# costmisc 0.2.0
 
 * Moved in `add_id_col()`, `listindex_to_col()`, `read_folder()` and `unnest_df()` from `csdrtools`.
 
