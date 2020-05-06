@@ -1,6 +1,6 @@
 Package: costmisc
 Title: Misc costverse functions
-Version: 0.2.0
+Version: 0.2.0.9000
 Authors@R: 
     person(given = "Adam H.",
            family = "James",
