@@ -4,15 +4,11 @@
 #'
 #' @description
 #'
-#' \lifecycle{questioning}
-#'
-#' \cr
 #' \code{read_folder()} is a wrapper around \code{lapply} to read an entire folder of files
 #' into a list. No file checking is implemented, so each file in the target folder must be
 #' of the same type.
 #'
 #' @export
-#'
 #'
 #' @param folder A folder path to read.
 #' @param read_function The function to use to read each file.
@@ -44,4 +40,51 @@ read_folder <- function(folder, read_function, .clean_file_names = TRUE, .id = N
   }
 
   file_list
+}
+
+#' Simple column specifications
+#'
+#' \code{col_rep()} allows for a simple specification of column types for use in read
+#' functions. Enter in a letter followed by a number to repeat that type that number
+#' of times. \cr
+#' \cr
+#' Supports output for use in \code{readr} and \code{readxl}, and other functions
+#' that take column type specifications in the same format.
+#'
+#' @param str String specifying the expansion.
+#' @param spec_type String. Either "readr" for short letter notation (e.g.,
+#' \code{ccnnndcc}) or "readxl" for long vector notation
+#' (e.g., \code{c("text", "text", "numeric")})
+#'
+#' @return An expanded string or a vector of column type specifications.
+#' @export
+#'
+#' @examples
+#' col_rep("c3n2dl3-2c")
+#'
+#' col_rep("c3n2dl3-2c", "readxl")
+#'
+col_rep <- function(str, spec_type = "readr") {
+  # need spec_type = base, readr, readxl
+  str <- tolower(str)
+
+  str_loc <- stringr::str_locate_all(str, "[a-z\\?\\-][0-9]+")[[1]]
+  str_val <- stringr::str_sub(str, str_loc[,1], str_loc[,2])
+
+  x_exp <- sapply(mapply(rep,
+                         x = stringr::str_extract(str_val, "[a-z\\?\\-]"),
+                         times = stringr::str_extract(str_val, "[0-9]+")),
+                  paste, collapse = "")
+
+  expanded <- stringi::stri_sub_replace_all(str, str_loc[,1], str_loc[,2], replacement = x_exp)
+
+  if (spec_type == "readr") {
+    expanded
+  } else if (spec_type == "readxl") {
+    type_map <- c(c = "text", i = "numeric", n = "numeric", d = "numeric", l = "logical",
+                  f = "text", D = "date", t = "date", "?" = "guess", "-" = "skip")
+
+    chars <- unlist(strsplit(expanded, split = ""))
+    unname(type_map[chars])
+  }
 }

@@ -30,9 +30,10 @@ description <- list(Description = "Package with miscellaneous functions used thr
 usethis::use_data_raw()
 
 # Package dependencies
-usethis::use_pipe()
+#usethis::use_pipe()
 usethis::use_package("cli", min_version = "2.0.0")
 usethis::use_package("stringr", min_version = "1.4.0")
+usethis::use_package("stringi", min_version = "1.4.0")
 usethis::use_package("lifecycle")
 
 ## ===== README & NEWS =====
@@ -48,6 +49,8 @@ usethis::use_badge("License: GPLv3", "https://opensource.org/licenses/GPL-3.0", 
 
 ## ===== Developmental Tools =====
 
+devtools::build_site()
+
 devtools::build_readme()
 devtools::document()
 devtools::check()
@@ -58,8 +61,6 @@ devtools::load_all()
 
 devtools::build(binary = TRUE)
 devtools::build()
-
-devtools::build_site()
 
 detach("package:costmisc", unload = TRUE)
 

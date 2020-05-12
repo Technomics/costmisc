@@ -21,9 +21,6 @@ read_folder(folder, read_function, .clean_file_names = TRUE, .id = NULL, ...)
 A list of read files from the folder.
 }
 \description{
-\lifecycle{questioning}
-
-\cr
 \code{read_folder()} is a wrapper around \code{lapply} to read an entire folder of files
 into a list. No file checking is implemented, so each file in the target folder must be
 of the same type.

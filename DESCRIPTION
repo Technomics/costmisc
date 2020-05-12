@@ -12,9 +12,9 @@ License: GPL-3
 Imports: 
     stringr (>= 1.4.0),
     lifecycle,
-    cli (>= 2.0.0)
-RdMacros: 
-    lifecycle
+    cli (>= 2.0.0),
+    lifecycle,
+    stringi (>= 1.4.0)
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
