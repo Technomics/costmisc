@@ -42,10 +42,9 @@ usethis::use_package("lifecycle")
 usethis::use_readme_rmd()
 usethis::use_news_md()
 
-usethis::use_lifecycle_badge("questioning")
-#usethis::use_badge("Build: passing", "https://gitlab.technomics.net/costverse/costmisc", "https://img.shields.io/badge/build-passing-green.svg")
+usethis::use_lifecycle_badge("maturing")
 usethis::use_badge("License: GPLv3", "https://opensource.org/licenses/GPL-3.0", "https://img.shields.io/badge/License-GPLv3-blue.svg")
-
+rnomics::use_badge_passing()
 
 ## ===== Developmental Tools =====
 

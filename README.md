@@ -6,9 +6,11 @@
 <!-- badges: start -->
 
 [![Lifecycle:
-questioning](https://img.shields.io/badge/lifecycle-questioning-blue.svg)](https://www.tidyverse.org/lifecycle/#questioning)
+maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 [![License:
 GPLv3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://opensource.org/licenses/GPL-3.0)
+[![Build:
+passing](https://img.shields.io/badge/build-passing-green.svg)](https://gitlab.technomics.net/costverse/costmisc.git)
 <!-- badges: end -->
 
 The package costmisc adds miscellaneous functions to the costverse that
@@ -16,21 +18,21 @@ support various other packages.
 
 ## Installation
 
-### Clone Repository
-
-Clone the repository into a working directory of your choice.
-
-1.  Navigate to the directory with terminal using the `cd` command to
-    where you would like to clone the repository too. The project will
-    become a sub-directory of this location.
-      - `cd "your/file/directory/here"`
-2.  Clone the desired repository from GitLab. Use the option to not
-    check for the valid certificate (note the double hyphen in front of
-    config).
-      - `git clone --config http.sslVerify=false
-        https://gitlab.technomics.net/costverse/costmisc.git`
-
 ### Install Directly
 
-The Technomics GitLab server does not currently support direct R package
-installation from source.
+You can install the released version of costmisc from
+[TRAN](http://shiny.technomics.net/tran/www/home/) with:
+
+``` r
+install.packages("costmisc", repos = "http://shiny.technomics.net/tran")
+```
+
+### Clone Repository
+
+Clone the repository into a working directory of your choice. The most
+simple way is to use
+[`rnomics`](http://shiny.technomics.net/tran/www/docs/rnomics/).
+
+``` r
+rnomics::gitlab_clone("costverse/costmisc", "your/file/directory/here")
+```
