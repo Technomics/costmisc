@@ -4,7 +4,14 @@
 \alias{read_folder}
 \title{Read of a folder of files}
 \usage{
-read_folder(folder, read_function, .clean_file_names = TRUE, .id = NULL, ...)
+read_folder(
+  folder,
+  read_function,
+  .clean_file_names = TRUE,
+  .id = NULL,
+  .recursive = TRUE,
+  ...
+)
 }
 \arguments{
 \item{folder}{A folder path to read.}
@@ -13,7 +20,9 @@ read_folder(folder, read_function, .clean_file_names = TRUE, .id = NULL, ...)
 
 \item{.clean_file_names}{Logical to clean names into snake_case or not.}
 
-\item{.id}{Optionally add an id variable to each file table as this name.}
+\item{.id}{Optionally add an id variable to each file table as this name}
+
+\item{.recursive}{Logical to recursively load the folder.}
 
 \item{...}{Arguments passed to \code{read_function}.}
 }
