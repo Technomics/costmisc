@@ -24,13 +24,15 @@
 #' flexfiles <- read_folder(files, read_ff)
 #'
 
-read_folder <- function(folder, read_function, .clean_file_names = TRUE, .id = NULL, ...) {
-  file_vector <- list.files(path = folder, full.names = TRUE, recursive = TRUE)
+read_folder <- function(folder, read_function, .clean_file_names = TRUE,
+                        .id = NULL, recursive = TRUE, ...) {
+
+  file_vector <- list.files(path = folder, full.names = TRUE, recursive = recursive)
+  file_names <- stringr::str_remove(file_vector, folder)
 
   file_list <- lapply(file_vector, read_function, ...)
-  names(file_list) <- file_vector
+  names(file_list) <- file_names
 
-  # don't love the name of .clean_file_names
   if (.clean_file_names) {
     names(file_list) <- janitor::make_clean_names(tolower(names(file_list)))
   }
