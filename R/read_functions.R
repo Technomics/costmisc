@@ -17,14 +17,8 @@
 #' @param .recursive Logical to recursively load the folder.
 #' @param ... Arguments passed to \code{read_function}.
 #'
-#' @return A list of read files from the folder.
+#' @return A list of output from the `read_function`.
 #'
-#' @examples
-#' files <- system.file("extdata/multiple-flexfiles", package = "csdrtools")
-#'
-#' flexfiles <- read_folder(files, read_ff)
-#'
-
 read_folder <- function(folder, read_function, .clean_file_names = TRUE,
                         .id = NULL, .recursive = TRUE, ...) {
 

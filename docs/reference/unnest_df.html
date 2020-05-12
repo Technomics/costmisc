@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Internal function to support stacking FlexFiles — unnest_df • costmisc</title>
+<title>Unnest identical data frames — unnest_df • costmisc</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,10 @@
 
 
 
-<meta property="og:title" content="Internal function to support stacking FlexFiles — unnest_df" />
-<meta property="og:description" content="unnest_df() supports FlexFile stacking Internal function." />
+<meta property="og:title" content="Unnest identical data frames — unnest_df" />
+<meta property="og:description" content="unnest_df() stacks a list of lists of dataframes. This assumes that each
+level 2 list has the same dataframes with the same columns. This is used when
+reading in a set of files with identical format." />
 
 
 
@@ -72,7 +74,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">costmisc</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0.9002</span>
       </span>
     </div>
 
@@ -106,13 +108,15 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Internal function to support stacking FlexFiles</h1>
+    <h1>Unnest identical data frames</h1>
     
     <div class="hidden name"><code>unnest_df.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p><code>unnest_df()</code> supports FlexFile stacking Internal function.</p>
+    <p><code>unnest_df()</code> stacks a list of lists of dataframes. This assumes that each
+level 2 list has the same dataframes with the same columns. This is used when
+reading in a set of files with identical format.</p>
     </div>
 
     <pre class="usage"><span class='fu'>unnest_df</span>(<span class='no'>.data</span>)</pre>
@@ -122,13 +126,16 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>.data</th>
-      <td><p>A list of FlexFile submissions' tibbles converted from JSON format.</p></td>
+      <td><p>A list of lists of dataframes.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A list of stacked tibbles of multiple dataframes</p>
+    <p>A list of stacked tibbles.</p>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p><code><a href='add_id_col.html'>listindex_to_col</a></code></p></div>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

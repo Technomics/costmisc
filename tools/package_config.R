@@ -49,9 +49,11 @@ rnomics::use_badge_passing()
 ## ===== Developmental Tools =====
 
 devtools::build_site()
+pkgdown::build_reference()
 
 devtools::build_readme()
 devtools::document()
+devtools::spell_check()
 devtools::check()
 
 usethis::use_version()

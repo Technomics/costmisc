@@ -27,16 +27,10 @@ read_folder(
 \item{...}{Arguments passed to \code{read_function}.}
 }
 \value{
-A list of read files from the folder.
+A list of output from the \code{read_function}.
 }
 \description{
 \code{read_folder()} is a wrapper around \code{lapply} to read an entire folder of files
 into a list. No file checking is implemented, so each file in the target folder must be
 of the same type.
-}
-\examples{
-files <- system.file("extdata/multiple-flexfiles", package = "csdrtools")
-
-flexfiles <- read_folder(files, read_ff)
-
 }
