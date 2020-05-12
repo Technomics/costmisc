@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Strip attributes from object — strip_attributes • costmisc</title>
+<title>Simple column specifications — col_rep • costmisc</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,13 @@
 
 
 
-<meta property="og:title" content="Strip attributes from object — strip_attributes" />
-<meta property="og:description" content="" />
+<meta property="og:title" content="Simple column specifications — col_rep" />
+<meta property="og:description" content="col_rep() allows for a simple specification of column types for use in read
+functions. Enter in a letter followed by a number to repeat that type that number
+of times. 
+
+Supports output for use in readr and readxl, and other functions
+that take column type specifications in the same format." />
 
 
 
@@ -106,19 +111,46 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Strip attributes from object</h1>
+    <h1>Simple column specifications</h1>
     
-    <div class="hidden name"><code>strip_attributes.Rd</code></div>
+    <div class="hidden name"><code>col_rep.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p><a href='https://www.tidyverse.org/lifecycle/#questioning'><img src='figures/lifecycle-questioning.svg' alt='Questioning lifecycle'></a></p>
+    <p><code>col_rep()</code> allows for a simple specification of column types for use in read
+functions. Enter in a letter followed by a number to repeat that type that number
+of times. <br />
+<br />
+Supports output for use in <code>readr</code> and <code>readxl</code>, and other functions
+that take column type specifications in the same format.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>strip_attributes</span>(<span class='no'>x</span>, <span class='kw'>.retain_class</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>col_rep</span>(<span class='no'>str</span>, <span class='kw'>spec_type</span> <span class='kw'>=</span> <span class='st'>"readr"</span>)</pre>
 
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>str</th>
+      <td><p>String specifying the expansion.</p></td>
+    </tr>
+    <tr>
+      <th>spec_type</th>
+      <td><p>String. Either "readr" for short letter notation (e.g.,
+<code>ccnnndcc</code>) or "readxl" for long vector notation
+(e.g., <code><a href='https://rdrr.io/r/base/c.html'>c("text", "text", "numeric")</a></code>)</p></td>
+    </tr>
+    </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
+    <p>An expanded string or a vector of column type specifications.</p>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'>col_rep</span>(<span class='st'>"c3n2dl3-2c"</span>)</div><div class='output co'>#&gt; [1] "cccnndlll--c"</div><div class='input'>
+<span class='fu'>col_rep</span>(<span class='st'>"c3n2dl3-2c"</span>, <span class='st'>"readxl"</span>)</div><div class='output co'>#&gt;  [1] "text"    "text"    "text"    "numeric" "numeric" "numeric" "logical"
+#&gt;  [8] "logical" "logical" "skip"    "skip"    "text"   </div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

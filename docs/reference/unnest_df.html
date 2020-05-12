@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Strip attributes from object — strip_attributes • costmisc</title>
+<title>Unnest identical data frames — unnest_df • costmisc</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,10 @@
 
 
 
-<meta property="og:title" content="Strip attributes from object — strip_attributes" />
-<meta property="og:description" content="" />
+<meta property="og:title" content="Unnest identical data frames — unnest_df" />
+<meta property="og:description" content="unnest_df() stacks a list of lists of dataframes. This assumes that each
+level 2 list has the same dataframes with the same columns. This is used when
+reading in a set of files with identical format." />
 
 
 
@@ -106,18 +108,34 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Strip attributes from object</h1>
+    <h1>Unnest identical data frames</h1>
     
-    <div class="hidden name"><code>strip_attributes.Rd</code></div>
+    <div class="hidden name"><code>unnest_df.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p><a href='https://www.tidyverse.org/lifecycle/#questioning'><img src='figures/lifecycle-questioning.svg' alt='Questioning lifecycle'></a></p>
+    <p><code>unnest_df()</code> stacks a list of lists of dataframes. This assumes that each
+level 2 list has the same dataframes with the same columns. This is used when
+reading in a set of files with identical format.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>strip_attributes</span>(<span class='no'>x</span>, <span class='kw'>.retain_class</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>unnest_df</span>(<span class='no'>.data</span>)</pre>
 
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>.data</th>
+      <td><p>A list of lists of dataframes.</p></td>
+    </tr>
+    </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>A list of stacked tibbles.</p>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p><code><a href='add_id_col.html'>listindex_to_col</a></code></p></div>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

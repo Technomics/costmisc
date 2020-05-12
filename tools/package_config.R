@@ -30,9 +30,10 @@ description <- list(Description = "Package with miscellaneous functions used thr
 usethis::use_data_raw()
 
 # Package dependencies
-usethis::use_pipe()
+#usethis::use_pipe()
 usethis::use_package("cli", min_version = "2.0.0")
 usethis::use_package("stringr", min_version = "1.4.0")
+usethis::use_package("stringi", min_version = "1.4.0")
 usethis::use_package("lifecycle")
 
 ## ===== README & NEWS =====
@@ -41,15 +42,18 @@ usethis::use_package("lifecycle")
 usethis::use_readme_rmd()
 usethis::use_news_md()
 
-usethis::use_lifecycle_badge("questioning")
-#usethis::use_badge("Build: passing", "https://gitlab.technomics.net/costverse/costmisc", "https://img.shields.io/badge/build-passing-green.svg")
+usethis::use_lifecycle_badge("maturing")
 usethis::use_badge("License: GPLv3", "https://opensource.org/licenses/GPL-3.0", "https://img.shields.io/badge/License-GPLv3-blue.svg")
-
+rnomics::use_badge_passing()
 
 ## ===== Developmental Tools =====
 
+devtools::build_site()
+pkgdown::build_reference()
+
 devtools::build_readme()
 devtools::document()
+devtools::spell_check()
 devtools::check()
 
 usethis::use_version()
@@ -58,8 +62,6 @@ devtools::load_all()
 
 devtools::build(binary = TRUE)
 devtools::build()
-
-devtools::build_site()
 
 detach("package:costmisc", unload = TRUE)
 

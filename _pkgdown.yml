@@ -1,1 +1,15 @@
 destination: docs
+reference:
+- title: Read
+  contents:
+  - read_folder
+  - col_rep
+- title: Lists
+  contents:
+  - add_id_col
+  - listindex_to_col
+  - unnest_df
+- title: Vectors
+  contents:
+  - as_int
+  - strip_attributes

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Strip attributes from object — strip_attributes • costmisc</title>
+<title>Add id column to dataframe — add_id_col • costmisc</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,10 @@
 
 
 
-<meta property="og:title" content="Strip attributes from object — strip_attributes" />
-<meta property="og:description" content="" />
+<meta property="og:title" content="Add id column to dataframe — add_id_col" />
+<meta property="og:description" content="add_id_col() adds an id column to either a data frame or to each data frame in a list.
+listindex_to_col() adds the listindex from the first list of a list of data frames
+as an ID column in each of the nested data frames." />
 
 
 
@@ -106,18 +108,41 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Strip attributes from object</h1>
+    <h1>Add id column to dataframe</h1>
     
-    <div class="hidden name"><code>strip_attributes.Rd</code></div>
+    <div class="hidden name"><code>add_id_col.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p><a href='https://www.tidyverse.org/lifecycle/#questioning'><img src='figures/lifecycle-questioning.svg' alt='Questioning lifecycle'></a></p>
+    <p><code>add_id_col()</code> adds an id column to either a data frame or to each data frame in a list.</p>
+<p><code>listindex_to_col()</code> adds the listindex from the first list of a list of data frames
+as an ID column in each of the nested data frames.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>strip_attributes</span>(<span class='no'>x</span>, <span class='kw'>.retain_class</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>add_id_col</span>(<span class='no'>.data</span>, <span class='kw'>value</span> <span class='kw'>=</span> <span class='st'>"1"</span>, <span class='kw'>var</span> <span class='kw'>=</span> <span class='st'>"doc_id"</span>)
 
+<span class='fu'>listindex_to_col</span>(<span class='no'>.data</span>, <span class='kw'>var</span> <span class='kw'>=</span> <span class='st'>"doc_id"</span>)</pre>
 
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>.data</th>
+      <td><p>A list (or list of lists) of data frames.</p></td>
+    </tr>
+    <tr>
+      <th>value</th>
+      <td><p>A value to assign as the id.</p></td>
+    </tr>
+    <tr>
+      <th>var</th>
+      <td><p>Character name of the new id column.</p></td>
+    </tr>
+    </table>
+
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p><code><a href='unnest_df.html'>unnest_df</a></code></p></div>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
