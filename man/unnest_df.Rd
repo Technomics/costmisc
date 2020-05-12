@@ -2,16 +2,21 @@
 % Please edit documentation in R/list_functions.R
 \name{unnest_df}
 \alias{unnest_df}
-\title{Internal function to support stacking FlexFiles}
+\title{Unnest identical data frames}
 \usage{
 unnest_df(.data)
 }
 \arguments{
-\item{.data}{A list of FlexFile submissions' tibbles converted from JSON format.}
+\item{.data}{A list of lists of dataframes.}
 }
 \value{
-A list of stacked tibbles of multiple dataframes
+A list of stacked tibbles.
 }
 \description{
-\code{unnest_df()} supports FlexFile stacking Internal function.
+\code{unnest_df()} stacks a list of lists of dataframes. This assumes that each
+level 2 list has the same dataframes with the same columns. This is used when
+reading in a set of files with identical format.
+}
+\seealso{
+\code{\link{listindex_to_col}}
 }
