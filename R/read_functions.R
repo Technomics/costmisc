@@ -70,7 +70,8 @@ col_rep <- function(str, spec_type = "readr") {
 
   x_exp <- sapply(mapply(rep,
                          x = stringr::str_extract(str_val, "[a-z\\?\\-]"),
-                         times = stringr::str_extract(str_val, "[0-9]+")),
+                         times = stringr::str_extract(str_val, "[0-9]+"),
+                         SIMPLIFY = FALSE),
                   paste, collapse = "")
 
   expanded <- stringi::stri_sub_replace_all(str, str_loc[,1], str_loc[,2], replacement = x_exp)
