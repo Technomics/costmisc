@@ -62,7 +62,7 @@ read_folder <- function(folder, read_function, .clean_file_names = TRUE,
 #' col_rep("c3n2dl3-2c", "readxl")
 #'
 col_rep <- function(str, spec_type = "readr") {
-  # need spec_type = base, readr, readxl
+  # need spec_type = base, readr, readxl, sql
   str <- tolower(str)
 
   str_loc <- stringr::str_locate_all(str, "[a-z\\?\\-][0-9]+")[[1]]
@@ -76,13 +76,14 @@ col_rep <- function(str, spec_type = "readr") {
 
   expanded <- stringi::stri_sub_replace_all(str, str_loc[,1], str_loc[,2], replacement = x_exp)
 
-  if (spec_type == "readr") {
-    expanded
-  } else if (spec_type == "readxl") {
-    type_map <- c(c = "text", i = "numeric", n = "numeric", d = "numeric", l = "logical",
-                  f = "text", D = "date", t = "date", "?" = "guess", "-" = "skip")
+  if (spec_type == "readr") return(expanded)
 
-    chars <- unlist(strsplit(expanded, split = ""))
-    unname(type_map[chars])
-  }
+  type_map <- list(readxl = c(c = "text", i = "numeric", n = "numeric", d = "numeric", l = "logical",
+                              f = "text", D = "date", t = "date", "?" = "guess", "-" = "skip"),
+                   sql = c(c = "VARCHAR", i = "INTEGER", n = "DOUBLE", d = "DOUBLE", l = "BIT",
+                           f = "VARCHAR", D = "DATETIME", t = "DATETIME", "?" = NA_character_, "-" = NA_character_,
+                           a = "COUNTER"))
+
+  chars <- unlist(strsplit(expanded, split = ""))
+  unname(type_map[[spec_type]][chars])
 }
