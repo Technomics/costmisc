@@ -1,4 +1,3 @@
-## ===== Read Functions =====
 
 #' Read of a folder of files
 #'
