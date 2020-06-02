@@ -14,7 +14,9 @@
 #'
 clean_by <- function(by) {
 
-  if (is.null(names(by))) {
+  if (is.list(by) && names(by) == c("x", "y")) {
+    by_col <- by
+  } else if (is.null(names(by))) {
     by_col <- list(x = by, y = by)
   } else {
     by_col <- list(x = names(by), y = unname(by))
