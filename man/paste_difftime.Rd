@@ -20,4 +20,3 @@ paste_difftime(
 \description{
 \code{paste_difftime()} creates a message for an elapsed time. Taken from \code{print.difftime()}.
 }
-\keyword{internal}

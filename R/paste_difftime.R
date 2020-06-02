@@ -3,7 +3,7 @@
 #'
 #' \code{paste_difftime()} creates a message for an elapsed time. Taken from \code{print.difftime()}.
 #'
-#' @keywords internal
+#' @export
 #'
 #' @param x A timediff object.
 #' @param time_msg The message prefix.
