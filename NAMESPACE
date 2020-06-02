@@ -2,7 +2,10 @@
 
 export(add_id_col)
 export(as_int)
+export(clean_by)
 export(col_rep)
+export(distinct_insensitive)
+export(insensitive)
 export(listindex_to_col)
 export(read_folder)
 export(strip_attributes)

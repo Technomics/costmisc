@@ -1,4 +1,3 @@
-## ===== List Functions =====
 
 #' Unnest identical data frames
 #'

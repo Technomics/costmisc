@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Strip attributes from object — strip_attributes • costmisc</title>
+<title>Clean "by" argument — clean_by • costmisc</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,9 @@
 
 
 
-<meta property="og:title" content="Strip attributes from object — strip_attributes" />
-<meta property="og:description" content="" />
+<meta property="og:title" content="Clean "by" argument — clean_by" />
+<meta property="og:description" content="clean_by() takes a valid by input of a character vector (named or unnamed) and transforms
+it into a list. Similar to common_by but does not require the actual data frames." />
 
 
 
@@ -106,17 +107,30 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Strip attributes from object</h1>
+    <h1>Clean "by" argument</h1>
     
-    <div class="hidden name"><code>strip_attributes.Rd</code></div>
+    <div class="hidden name"><code>clean_by.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p><a href='https://www.tidyverse.org/lifecycle/#questioning'><img src='figures/lifecycle-questioning.svg' alt='Questioning lifecycle'></a></p>
+    <p><code>clean_by()</code> takes a valid <code>by</code> input of a character vector (named or unnamed) and transforms
+it into a list. Similar to <code><a href='https://dplyr.tidyverse.org/reference/common_by.html'>common_by</a></code> but does not require the actual data frames.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>strip_attributes</span>(<span class='no'>x</span>, <span class='kw'>.retain_class</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>clean_by</span>(<span class='no'>by</span>)</pre>
 
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>by</th>
+      <td><p>A character vector of variables to join by. Same specification as used in
+<code><a href='https://dplyr.tidyverse.org/reference/join.html'>join</a></code>.<br />
+<br />
+To join by different variables on <code>df</code> and <code>df_sql</code> use a named vector.
+For example, by = c("a" = "b") will match <code>df.a</code> to <code>df_sql.b</code>.</p></td>
+    </tr>
+    </table>
 
 
   </div>

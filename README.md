@@ -11,6 +11,8 @@ maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www
 GPLv3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://opensource.org/licenses/GPL-3.0)
 [![Build:
 passing](https://img.shields.io/badge/build-passing-green.svg)](https://gitlab.technomics.net/costverse/costmisc.git)
+[![version:
+0.3.0](https://img.shields.io/badge/version-0.3.0-blue.svg)]()
 <!-- badges: end -->
 
 The package costmisc adds miscellaneous functions to the costverse that

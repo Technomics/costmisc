@@ -1,3 +1,4 @@
+
 #' Coerces to integer without warning
 #'
 #' \lifecycle{questioning}

@@ -57,6 +57,7 @@ devtools::spell_check()
 devtools::check()
 
 usethis::use_version()
+rnomics::use_badge_version()
 
 devtools::load_all()
 

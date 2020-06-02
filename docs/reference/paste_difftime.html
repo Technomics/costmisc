@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Strip attributes from object — strip_attributes • costmisc</title>
+<title>Paste function for time difference — paste_difftime • costmisc</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Strip attributes from object — strip_attributes" />
-<meta property="og:description" content="" />
+<meta property="og:title" content="Paste function for time difference — paste_difftime" />
+<meta property="og:description" content="paste_difftime() creates a message for an elapsed time. Taken from print.difftime()." />
 
 
 
@@ -106,17 +106,37 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Strip attributes from object</h1>
+    <h1>Paste function for time difference</h1>
     
-    <div class="hidden name"><code>strip_attributes.Rd</code></div>
+    <div class="hidden name"><code>paste_difftime.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p><a href='https://www.tidyverse.org/lifecycle/#questioning'><img src='figures/lifecycle-questioning.svg' alt='Questioning lifecycle'></a></p>
+    <p><code>paste_difftime()</code> creates a message for an elapsed time. Taken from <code><a href='https://rdrr.io/r/base/difftime.html'>print.difftime()</a></code>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>strip_attributes</span>(<span class='no'>x</span>, <span class='kw'>.retain_class</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>paste_difftime</span>(
+  <span class='no'>x</span>,
+  <span class='kw'>time_msg</span> <span class='kw'>=</span> <span class='st'>"Time difference of"</span>,
+  <span class='kw'>digits</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span>(<span class='st'>"digits"</span>)
+)</pre>
 
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>x</th>
+      <td><p>A timediff object.</p></td>
+    </tr>
+    <tr>
+      <th>time_msg</th>
+      <td><p>The message prefix.</p></td>
+    </tr>
+    <tr>
+      <th>digits</th>
+      <td><p>Number of digits option.</p></td>
+    </tr>
+    </table>
 
 
   </div>

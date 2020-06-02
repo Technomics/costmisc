@@ -13,3 +13,11 @@ reference:
   contents:
   - as_int
   - strip_attributes
+- title: dplyr Mods
+  contents:
+  - insensitive
+  - distinct_insensitive
+- title: Misc
+  contents:
+  - clean_by
+  - paste_difftime
