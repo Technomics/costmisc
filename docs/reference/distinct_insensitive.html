@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Strip attributes from object — strip_attributes • costmisc</title>
+<title>Insensitive dplyr distinct — distinct_insensitive • costmisc</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,9 @@
 
 
 
-<meta property="og:title" content="Strip attributes from object — strip_attributes" />
-<meta property="og:description" content="" />
+<meta property="og:title" content="Insensitive dplyr distinct — distinct_insensitive" />
+<meta property="og:description" content="Alternative to distinct to operate insensitive to case. Parameters are defined identically to the
+dplyr base function." />
 
 
 
@@ -106,18 +107,38 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Strip attributes from object</h1>
+    <h1>Insensitive dplyr distinct</h1>
     
-    <div class="hidden name"><code>strip_attributes.Rd</code></div>
+    <div class="hidden name"><code>distinct_insensitive.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p><a href='https://www.tidyverse.org/lifecycle/#questioning'><img src='figures/lifecycle-questioning.svg' alt='Questioning lifecycle'></a></p>
+    <p>Alternative to <code><a href='https://dplyr.tidyverse.org/reference/distinct.html'>distinct</a></code> to operate insensitive to case. Parameters are defined identically to the
+dplyr base function.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>strip_attributes</span>(<span class='no'>x</span>, <span class='kw'>.retain_class</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>distinct_insensitive</span>(<span class='no'>.data</span>, <span class='no'>...</span>, <span class='kw'>.keep_all</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
 
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>.data</th>
+      <td><p>See <code><a href='https://dplyr.tidyverse.org/reference/distinct.html'>distinct</a></code>.</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>See <code><a href='https://dplyr.tidyverse.org/reference/distinct.html'>distinct</a></code>.</p></td>
+    </tr>
+    <tr>
+      <th>.keep_all</th>
+      <td><p>See <code><a href='https://dplyr.tidyverse.org/reference/distinct.html'>distinct</a></code>.</p></td>
+    </tr>
+    </table>
 
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p><code><a href='https://dplyr.tidyverse.org/reference/distinct.html'>distinct</a></code> from <code>dplyr</code> for parameter definitions and function.</p></div>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
