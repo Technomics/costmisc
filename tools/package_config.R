@@ -34,6 +34,11 @@ usethis::use_data_raw()
 usethis::use_package("cli", min_version = "2.0.0")
 usethis::use_package("stringr", min_version = "1.4.0")
 usethis::use_package("stringi", min_version = "1.4.0")
+usethis::use_package("rlang", min_version = "0.4.6")
+usethis::use_package("dplyr", min_version = "0.8.5")
+usethis::use_package("tibble", min_version = "3.0.0")
+usethis::use_package("purrr", min_version = "0.3.3")
+usethis::use_package("janitor", min_version = "2.0.0")
 usethis::use_package("lifecycle")
 
 ## ===== README & NEWS =====

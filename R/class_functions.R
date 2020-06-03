@@ -3,6 +3,9 @@
 #'
 #' \lifecycle{questioning}
 #'
+#' @param x object to coerce silently to integer.
+#' @param na_regex regular expression of values to convert to \code{NA}.
+#'
 #' @export
 #'
 as_int <- function(x, na_regex = "[^0-9]") {
@@ -17,6 +20,9 @@ as_int <- function(x, na_regex = "[^0-9]") {
 #'
 #' \lifecycle{questioning}
 #'
+#' @param x object to strip attributes from.
+#' @param .retain_class logical whether or not to retain the class.
+#'
 #' @export
 #'
 strip_attributes <- function(x, .retain_class = TRUE) {
@@ -24,4 +30,24 @@ strip_attributes <- function(x, .retain_class = TRUE) {
   attributes(x) <- NULL
 
   if (.retain_class) structure(x, class = x_class) else x
+}
+
+#' Check is scalar type number
+#'
+#' \lifecycle{questioning}
+#' This function was moved from \code{costmodelr}. The use case is unclear and as such this
+#' function may be removed from a later version.\cr
+#' \cr
+#' \code{is_scalar_numeric()} checks for a given type and whether the vector is
+#' "scalar", that is, of length 1. Code checks if \code{\link[rlang]{is_scalar_double}}
+#' or \code{\link[rlang]{is_scalar_integer}}.
+#'
+#' @inheritParams rlang::is_scalar_double
+#'
+#' @export
+#'
+#' @seealso \code{\link[rlang]{scalar-type-predicates}}
+#'
+is_scalar_numeric <- function(x) {
+  rlang::is_scalar_double(x) | rlang::is_scalar_integer(x)
 }
