@@ -7,8 +7,8 @@
 #' @param by A character vector of variables to join by. Same specification as used in
 #' \code{\link[dplyr]{join}}.\cr
 #' \cr
-#' To join by different variables on \code{df} and \code{df_sql} use a named vector.
-#' For example, by = c("a" = "b") will match \code{df.a} to \code{df_sql.b}.
+#' To join by different variables on \code{x} and \code{y} use a named vector.
+#' For example, by = c("a" = "b") will match \code{x$a} to \code{y$b}.
 #'
 #' @export
 #'
