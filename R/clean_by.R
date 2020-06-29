@@ -19,7 +19,10 @@ clean_by <- function(by) {
   } else if (is.null(names(by))) {
     by_col <- list(x = by, y = by)
   } else {
-    by_col <- list(x = names(by), y = unname(by))
+    by_names <- names(by)
+    by_names[!rlang::have_name(by)] <- unname(by)[!rlang::have_name(by)]
+
+    by_col <- list(x = by_names, y = unname(by))
   }
 
   by_col

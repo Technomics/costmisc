@@ -62,18 +62,22 @@ read_folder <- function(folder, read_function, .clean_file_names = TRUE,
 #'
 col_rep <- function(str, spec_type = "readr") {
   # need spec_type = base, readr, readxl, sql
-  str <- tolower(str)
 
-  str_loc <- stringr::str_locate_all(str, "[a-z\\?\\-][0-9]+")[[1]]
-  str_val <- stringr::str_sub(str, str_loc[,1], str_loc[,2])
+  str_loc <- stringr::str_locate_all(str, "[A-z\\?\\-][0-9]+")[[1]]
 
-  x_exp <- sapply(mapply(rep,
-                         x = stringr::str_extract(str_val, "[a-z\\?\\-]"),
-                         times = stringr::str_extract(str_val, "[0-9]+"),
-                         SIMPLIFY = FALSE),
-                  paste, collapse = "")
+  if (nrow(str_loc) > 0) {
+    str_val <- stringr::str_sub(str, str_loc[,1], str_loc[,2])
 
-  expanded <- stringi::stri_sub_replace_all(str, str_loc[,1], str_loc[,2], replacement = x_exp)
+    x_exp <- sapply(mapply(rep,
+                           x = stringr::str_extract(str_val, "[A-z\\?\\-]"),
+                           times = stringr::str_extract(str_val, "[0-9]+"),
+                           SIMPLIFY = FALSE),
+                    paste, collapse = "")
+
+    expanded <- stringi::stri_sub_replace_all(str, str_loc[,1], str_loc[,2], replacement = x_exp)
+  } else {
+    expanded <- str
+  }
 
   if (spec_type == "readr") return(expanded)
 

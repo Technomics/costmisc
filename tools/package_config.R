@@ -16,6 +16,10 @@ usethis::use_gpl3_license("Technomics, Inc.")
 # Site
 usethis::use_pkgdown()
 
+# Test
+usethis::use_testthat()
+usethis::use_test("read_functions")
+
 ## ===== DESCRIPTION =====
 
 # Description list
@@ -47,11 +51,16 @@ usethis::use_package("lifecycle")
 usethis::use_readme_rmd()
 usethis::use_news_md()
 
+rnomics::use_badge_costverse()
 usethis::use_lifecycle_badge("maturing")
 usethis::use_badge("License: GPLv3", "https://opensource.org/licenses/GPL-3.0", "https://img.shields.io/badge/License-GPLv3-blue.svg")
 rnomics::use_badge_passing()
 
 ## ===== Developmental Tools =====
+
+cvg <- devtools::test_coverage()
+rnomics::use_badge_coverage(cvg)
+devtools::test()
 
 devtools::build_site()
 pkgdown::build_reference()
@@ -72,3 +81,11 @@ devtools::build()
 detach("package:costmisc", unload = TRUE)
 
 ## ===== Scratch Work =====
+
+for (i in 1:4) {
+  write_file <- paste0("inst/examples/mtcars_", i, ".csv")
+
+  write.csv(mtcars[seq((i - 1) * 8 + 1, (i * 8)), ], write_file, row.names = FALSE)
+
+}
+
