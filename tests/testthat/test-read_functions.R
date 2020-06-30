@@ -1,5 +1,5 @@
 
-test_that("read_folder", {
+test_that("read_folder loads files correctly", {
 
   check_data <- list()
   for (i in 1:4) {
@@ -28,7 +28,7 @@ test_that("read_folder", {
 
 })
 
-test_that("col_rep", {
+test_that("col_rep returns the correct col_type specification", {
 
   test_str1 <- "cindlfDt?-a"
   test_str2 <- "c3n2dl3-2c"
@@ -51,7 +51,7 @@ test_that("col_rep", {
 
 })
 
-test_that("excel functions", {
+test_that("functions for reading excel tables work", {
 
   example_file <- system.file("examples/excel examples.xlsx", package = "costmisc")
 
@@ -84,7 +84,7 @@ test_that("excel functions", {
   expect_error(read_excel_table(wb, "tbl_fake"), "Table \"tbl_fake\" not uniquely found")
 })
 
-test_that("namespace openxlsx fail", {
+test_that("when openxlsx cannot be loaded an error triggers", {
 
   with_mock(
     requireNamespace = function(ns, quietly) FALSE,

@@ -1,5 +1,5 @@
 
-test_that("clean by", {
+test_that("clean_by output is correct", {
   by1 <- c("a", "b")
   by2 <- c(a = "a", b = "b")
   by3 <- c(a1 = "a", "b")

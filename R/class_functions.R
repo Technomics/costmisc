@@ -39,8 +39,7 @@ strip_attributes <- function(x, .retain_class = TRUE) {
 #' function may be removed from a later version.\cr
 #' \cr
 #' \code{is_scalar_numeric()} checks for a given type and whether the vector is
-#' "scalar", that is, of length 1. Code checks if \code{\link[rlang]{is_scalar_double}}
-#' or \code{\link[rlang]{is_scalar_integer}}.
+#' "scalar", that is, of length 1.
 #'
 #' @inheritParams rlang::is_scalar_double
 #'
