@@ -49,5 +49,5 @@ strip_attributes <- function(x, .retain_class = TRUE) {
 #' @seealso \code{\link[rlang]{scalar-type-predicates}}
 #'
 is_scalar_numeric <- function(x) {
-  rlang::is_scalar_double(x) | rlang::is_scalar_integer(x)
+  rlang::is_scalar_double(x) || rlang::is_scalar_integer(x)
 }

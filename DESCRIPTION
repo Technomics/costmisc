@@ -1,6 +1,6 @@
 Package: costmisc
 Title: Misc costverse functions
-Version: 0.3.0
+Version: 0.4.0
 Authors@R: 
     person(given = "Adam H.",
            family = "James",
@@ -25,6 +25,7 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.0
 RdMacros: lifecycle
 Suggests: 
-    testthat
+    testthat,
+    openxlsx (>= 4.1.4)
 Depends: 
     R (>= 2.10)

@@ -43,6 +43,9 @@ usethis::use_package("dplyr", min_version = "0.8.5")
 usethis::use_package("tibble", min_version = "3.0.0")
 usethis::use_package("purrr", min_version = "0.3.3")
 usethis::use_package("janitor", min_version = "2.0.0")
+
+usethis::use_package("openxlsx", min_version = "4.1.4", type = "Suggests")
+
 usethis::use_package("lifecycle")
 
 ## ===== README & NEWS =====

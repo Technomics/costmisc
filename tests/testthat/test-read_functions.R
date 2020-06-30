@@ -16,7 +16,7 @@ test_that("read_folder", {
   check_data3 <- check_data1 %>%
     listindex_to_col("new_id")
 
-  the_dir <- system.file("examples", package = "costmisc")
+  the_dir <- system.file("examples/mtcars", package = "costmisc")
 
   x1 <- read_folder(the_dir, read.csv)
   x2 <- read_folder(the_dir, read.csv, .clean_file_names = FALSE)
@@ -51,3 +51,45 @@ test_that("col_rep", {
 
 })
 
+test_that("excel functions", {
+
+  example_file <- system.file("examples/excel examples.xlsx", package = "costmisc")
+
+  wb <- openxlsx::loadWorkbook(example_file)
+
+  # check that list of tables align
+  table_list <- get_excel_tables(wb)
+  table_list2 <- get_excel_tables(wb, "tables")
+
+  table_check <- tibble::tibble(sheet = rep("tables", 2),
+                                table = c("tbl_mtcars", "tbl_iris"),
+                                range = c("I2:T34", "B2:F152"))
+
+  expect_equal(table_list, table_check)
+  expect_equal(table_list2, table_check)
+
+  expect_error(get_excel_tables(wb, "not real"), "Sheet 'not real' does not exist.")
+
+  # check that table reads in correctly
+  df_mtcars <- read_excel_table(wb, "tbl_mtcars")
+  df_mtcars2 <- read_excel_table(wb, "tbl_mtcars", table_list)
+
+  expect_equal(df_mtcars, df_mtcars2)
+
+  rownames(df_mtcars) <- df_mtcars$Model
+  df_mtcars <- df_mtcars[,-1]
+
+  expect_equal(df_mtcars, mtcars)
+
+  expect_error(read_excel_table(wb, "tbl_fake"), "Table \"tbl_fake\" not uniquely found")
+})
+
+test_that("namespace openxlsx fail", {
+
+  with_mock(
+    requireNamespace = function(ns, quietly) FALSE,
+    expect_error(get_excel_tables(0, 0), "Package \"openxlsx\" needed for this function to work. Please install it."),
+    expect_error(read_excel_table(0, 0), "Package \"openxlsx\" needed for this function to work. Please install it.")
+  )
+
+})

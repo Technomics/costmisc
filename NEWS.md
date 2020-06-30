@@ -1,3 +1,5 @@
+# costmisc 0.4.0
+
 # costmisc 0.3.0
 
 * Moved in `clean_by()`, `paste_difftime()`, `insensitive()` and `distinct_insensitive()` from `ff2db`.
