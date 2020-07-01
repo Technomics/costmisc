@@ -1,3 +1,7 @@
+# costmisc 0.4.1
+
+* Added `add_missing_column()` to add a column if missing to a data frame.
+
 # costmisc 0.4.0
 
 * Added `get_excel_tables()` to view the Tables from an Excel workbook.
