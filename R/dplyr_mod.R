@@ -27,7 +27,7 @@ insensitive <- function(fun = dplyr::inner_join) {
       y[[by$y[[i]]]] <- NULL
     }
 
-    res <- fun(x, y, list(x = tmp_by_x, y = tmp_by_y))
+    res <- fun(x, y, list(x = tmp_by_x, y = tmp_by_y), copy, suffix, ..., keep)
     res[tmp_by_x] <- list(NULL)
 
     res

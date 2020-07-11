@@ -6,6 +6,8 @@
 #' \cr
 #' This is a simple wrapper around \code{\link[tibble]{add_column}()}.
 #'
+#' @export
+#'
 #' @inheritParams tibble::add_column
 #'
 #' @seealso \code{\link[tibble]{add_column}()}

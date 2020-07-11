@@ -1,3 +1,7 @@
+# costmisc 0.4.2
+
+* Tweaked `insensitive()` so that it passes through all the join arguments.
+
 # costmisc 0.4.1
 
 * Added `add_missing_column()` to add a column if missing to a data frame.

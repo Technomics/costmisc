@@ -13,9 +13,9 @@ maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www
 GPLv3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://opensource.org/licenses/GPL-3.0)
 [![Build:
 passing](https://img.shields.io/badge/build-passing-green.svg)](https://gitlab.technomics.net/costverse/costmisc.git)
-[![version:
-0.4.1](https://img.shields.io/badge/version-0.4.1-blue.svg)]()
 [![coverage: 94%25](https://img.shields.io/badge/coverage-94%25-green.svg)](https://cran.r-project.org/web/packages/covr/vignettes/how_it_works.html)
+[![version:
+0.4.2](https://img.shields.io/badge/version-0.4.2-blue.svg)]()
 <!-- badges: end -->
 
 The package costmisc adds miscellaneous functions to the costverse that
