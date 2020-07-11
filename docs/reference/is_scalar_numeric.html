@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Changelog • costmisc</title>
+<title>Check is scalar type number — is_scalar_numeric • costmisc</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,15 @@
 
 
 
-<meta property="og:title" content="Changelog" />
+<meta property="og:title" content="Check is scalar type number — is_scalar_numeric" />
+<meta property="og:description" content="
+
+This function was moved from costmodelr. The use case is unclear and as such this
+function may be removed from a later version.
+
+is_scalar_numeric() checks for a given type and whether the vector is
+&quot;scalar&quot;, that is, of length 1. Code checks if is_scalar_double
+or is_scalar_integer." />
 
 
 
@@ -58,7 +66,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-news">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -105,40 +113,43 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-      <h1 data-toc-skip>Changelog <small></small></h1>
-      
+    <h1>Check is scalar type number</h1>
+    
+    <div class="hidden name"><code>is_scalar_numeric.Rd</code></div>
     </div>
 
-    <div id="costmisc-030" class="section level1">
-<h1 class="page-header" data-toc-text="0.3.0">
-<a href="#costmisc-030" class="anchor"></a>costmisc 0.3.0</h1>
-<ul>
-<li>Moved in <code><a href="../reference/clean_by.html">clean_by()</a></code>, <code><a href="../reference/paste_difftime.html">paste_difftime()</a></code>, <code><a href="../reference/insensitive.html">insensitive()</a></code> and <code><a href="../reference/distinct_insensitive.html">distinct_insensitive()</a></code> from <code>ff2db</code>.</li>
-</ul>
-</div>
-    <div id="costmisc-020" class="section level1">
-<h1 class="page-header" data-toc-text="0.2.0">
-<a href="#costmisc-020" class="anchor"></a>costmisc 0.2.0</h1>
-<ul>
-<li>Moved in <code><a href="../reference/add_id_col.html">add_id_col()</a></code>, <code><a href="../reference/add_id_col.html">listindex_to_col()</a></code>, <code><a href="../reference/read_folder.html">read_folder()</a></code> and <code><a href="../reference/unnest_df.html">unnest_df()</a></code> from <code>csdrtools</code>.</li>
-</ul>
-</div>
-    <div id="costmisc-010" class="section level1">
-<h1 class="page-header" data-toc-text="0.1.0">
-<a href="#costmisc-010" class="anchor"></a>costmisc 0.1.0</h1>
-<ul>
-<li>Moved in <code><a href="../reference/as_int.html">as_int()</a></code> from <code>wbstools</code>.</li>
-<li>Moved in <code>strip_Attributes()</code> from <code>wbstools</code>.</li>
-</ul>
-</div>
-  </div>
+    <div class="ref-description">
+    <p><a href='https://www.tidyverse.org/lifecycle/#questioning'><img src='figures/lifecycle-questioning.svg' alt='Questioning lifecycle'></a>
 
+This function was moved from <code>costmodelr</code>. The use case is unclear and as such this
+function may be removed from a later version.<br />
+<br />
+<code>is_scalar_numeric()</code> checks for a given type and whether the vector is
+"scalar", that is, of length 1. Code checks if <code><a href='https://rdrr.io/pkg/rlang/man/scalar-type-predicates.html'>is_scalar_double</a></code>
+or <code><a href='https://rdrr.io/pkg/rlang/man/scalar-type-predicates.html'>is_scalar_integer</a></code>.</p>
+    </div>
+
+    <pre class="usage"><span class='fu'>is_scalar_numeric</span>(<span class='no'>x</span>)</pre>
+
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>x</th>
+      <td><p>object to be tested.</p></td>
+    </tr>
+    </table>
+
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p><code><a href='https://rdrr.io/pkg/rlang/man/scalar-type-predicates.html'>scalar-type-predicates</a></code></p></div>
+
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
     </nav>
   </div>
-
 </div>
 
 

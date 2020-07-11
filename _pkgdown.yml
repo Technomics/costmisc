@@ -4,6 +4,8 @@ reference:
   contents:
   - read_folder
   - col_rep
+  - get_excel_tables
+  - read_excel_table
 - title: Lists
   contents:
   - add_id_col
@@ -13,6 +15,7 @@ reference:
   contents:
   - as_int
   - strip_attributes
+  - is_scalar_numeric
 - title: dplyr Mods
   contents:
   - insensitive

@@ -7,17 +7,22 @@
 #' @param by A character vector of variables to join by. Same specification as used in
 #' \code{\link[dplyr]{join}}.\cr
 #' \cr
-#' To join by different variables on \code{df} and \code{df_sql} use a named vector.
-#' For example, by = c("a" = "b") will match \code{df.a} to \code{df_sql.b}.
+#' To join by different variables on \code{x} and \code{y} use a named vector.
+#' For example, by = c("a" = "b") will match \code{x$a} to \code{y$b}.
 #'
 #' @export
 #'
 clean_by <- function(by) {
 
-  if (is.null(names(by))) {
+  if (is.list(by) && names(by) == c("x", "y")) {
+    by_col <- by
+  } else if (is.null(names(by))) {
     by_col <- list(x = by, y = by)
   } else {
-    by_col <- list(x = names(by), y = unname(by))
+    by_names <- names(by)
+    by_names[!rlang::have_name(by)] <- unname(by)[!rlang::have_name(by)]
+
+    by_col <- list(x = by_names, y = unname(by))
   }
 
   by_col

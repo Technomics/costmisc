@@ -1,6 +1,6 @@
 Package: costmisc
 Title: Misc costverse functions
-Version: 0.3.0
+Version: 0.4.2
 Authors@R: 
     person(given = "Adam H.",
            family = "James",
@@ -13,10 +13,19 @@ Imports:
     stringr (>= 1.4.0),
     lifecycle,
     cli (>= 2.0.0),
-    lifecycle,
-    stringi (>= 1.4.0)
+    stringi (>= 1.4.0),
+    rlang (>= 0.4.6),
+    dplyr (>= 0.8.5),
+    tibble (>= 3.0.0),
+    purrr (>= 0.3.3),
+    janitor (>= 2.0.0)
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.0
 RdMacros: lifecycle
+Suggests: 
+    testthat,
+    openxlsx (>= 4.1.4)
+Depends: 
+    R (>= 2.10)

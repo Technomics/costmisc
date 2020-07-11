@@ -6,6 +6,11 @@
 \usage{
 as_int(x, na_regex = "[^0-9]")
 }
+\arguments{
+\item{x}{object to coerce silently to integer.}
+
+\item{na_regex}{regular expression of values to convert to \code{NA}.}
+}
 \description{
 \lifecycle{questioning}
 }

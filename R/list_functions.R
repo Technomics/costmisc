@@ -28,7 +28,7 @@ unnest_df <- function(.data) {
 #' @param value A value to assign as the id.
 #' @param var Character name of the new id column.
 #'
-add_id_col <- function(.data, value = "1", var = "doc_id") {
+add_id_col <- function(.data, value = 1L, var = "doc_id") {
   if (class(.data) == "data.frame") {
     tibble::add_column(.data, !!var := value, .before = 1)
   } else if (class(.data) == "list") {
@@ -46,5 +46,7 @@ add_id_col <- function(.data, value = "1", var = "doc_id") {
 #' @seealso \code{\link{unnest_df}}
 #'
 listindex_to_col <- function(.data, var = "doc_id") {
-  purrr::map(seq_along(.data), ~ add_id_col(.data[[.]], ., var))
+  list_index <- rlang::set_names(seq_along(.data), names(.data))
+
+  purrr::map(list_index, ~ add_id_col(.data[[.]], ., var))
 }

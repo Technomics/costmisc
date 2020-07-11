@@ -6,6 +6,11 @@
 \usage{
 strip_attributes(x, .retain_class = TRUE)
 }
+\arguments{
+\item{x}{object to strip attributes from.}
+
+\item{.retain_class}{logical whether or not to retain the class.}
+}
 \description{
 \lifecycle{questioning}
 }

@@ -5,7 +5,7 @@
 \alias{listindex_to_col}
 \title{Add id column to dataframe}
 \usage{
-add_id_col(.data, value = "1", var = "doc_id")
+add_id_col(.data, value = 1L, var = "doc_id")
 
 listindex_to_col(.data, var = "doc_id")
 }
