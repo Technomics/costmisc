@@ -12,17 +12,19 @@
 #' @param folder A folder path to read.
 #' @param read_function The function to use to read each file.
 #' @param .clean_file_names Logical to clean names into snake_case or not.
+#' @param .basename Logical to only keep the \code{\link{basename}()} of each file.
 #' @param .id Optionally add an id variable to each file table as this name
 #' @param .recursive Logical to recursively load the folder.
 #' @param ... Arguments passed to \code{read_function}.
 #'
 #' @return A list of output from the `read_function`.
 #'
-read_folder <- function(folder, read_function, .clean_file_names = TRUE,
+read_folder <- function(folder, read_function, .clean_file_names = TRUE, .basename = FALSE,
                         .id = NULL, .recursive = TRUE, ...) {
 
   file_vector <- list.files(path = folder, full.names = TRUE, recursive = .recursive)
   file_names <- stringr::str_remove(file_vector, folder)
+  if (.basename) file_names <- basename(file_names)
 
   file_list <- lapply(file_vector, read_function, ...)
   names(file_list) <- file_names
