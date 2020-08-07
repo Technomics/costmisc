@@ -16,10 +16,6 @@ reference:
   - as_int
   - strip_attributes
   - is_scalar_numeric
-- title: dplyr Mods
-  contents:
-  - insensitive
-  - distinct_insensitive
 - title: Misc
   contents:
   - clean_by

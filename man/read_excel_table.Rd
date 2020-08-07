@@ -21,7 +21,7 @@ A tibble with the table.
 \code{read_excel_table()} reads a table object from an Excel workbook.
 }
 \examples{
-example_file <- system.file("examples/excel examples.xlsx", package = "costmisc")
+example_file <- system.file("examples/excel_examples.xlsx", package = "costmisc")
 
 wb <- openxlsx::loadWorkbook(example_file)
 head(read_excel_table(wb, "tbl_mtcars"))

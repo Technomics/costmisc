@@ -109,7 +109,7 @@ col_rep <- function(str, spec_type = "readr") {
 #' @family Read Excel tables
 #'
 #' @examples
-#' example_file <- system.file("examples/excel examples.xlsx", package = "costmisc")
+#' example_file <- system.file("examples/excel_examples.xlsx", package = "costmisc")
 #'
 #' wb <- openxlsx::loadWorkbook(example_file)
 #' get_excel_tables(wb)
@@ -122,13 +122,12 @@ get_excel_tables <- function(wb, sheets = NULL) {
   if (is.null(sheets))
     sheets <- names(wb)
 
-  sheets %>%
-    purrr::map_df( ~ {
-      tbls <- openxlsx::getTables(wb, .)
-      tibble::tibble(sheet = .,
-                     table = strip_attributes(tbls, FALSE),
-                     range = attr(tbls, "refs"))
-    })
+  purrr::map_df(sheets, ~ {
+    tbls <- openxlsx::getTables(wb, .x)
+    tibble::tibble(sheet = .x,
+                   table = strip_attributes(tbls, FALSE),
+                   range = attr(tbls, "refs"))
+  })
 }
 
 #' Read Excel tables
@@ -146,7 +145,7 @@ get_excel_tables <- function(wb, sheets = NULL) {
 #' @family Read Excel tables
 #'
 #' @examples
-#' example_file <- system.file("examples/excel examples.xlsx", package = "costmisc")
+#' example_file <- system.file("examples/excel_examples.xlsx", package = "costmisc")
 #'
 #' wb <- openxlsx::loadWorkbook(example_file)
 #' head(read_excel_table(wb, "tbl_mtcars"))
@@ -159,9 +158,7 @@ read_excel_table <- function(wb, table_name, table_df = NULL) {
   if (is.null(table_df))
     table_df <- get_excel_tables(wb)
 
-  range <- table_df %>%
-    dplyr::filter(table == table_name) %>%
-    dplyr::select(sheet, range)
+  range <- dplyr::select(dplyr::filter(table_df, .data$table == table_name), .data$sheet, .data$range)
 
   if (nrow(range) != 1) stop(paste0("Table \"", table_name, "\" not uniquely found"))
 
