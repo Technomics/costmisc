@@ -1,3 +1,7 @@
+# costmisc 0.5.0
+
+* Moved the dplyr modification functions to another package. These were purposely removed rather than depricated. This includes both `insensitive()` and `distinct_insensitive()`.
+
 # costmisc 0.4.2
 
 * Tweaked `insensitive()` so that it passes through all the join arguments.
