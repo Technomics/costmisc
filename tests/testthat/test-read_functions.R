@@ -53,7 +53,7 @@ test_that("col_rep returns the correct col_type specification", {
 
 test_that("functions for reading excel tables work", {
 
-  example_file <- system.file("examples/excel examples.xlsx", package = "costmisc")
+  example_file <- system.file("examples/excel_examples.xlsx", package = "costmisc")
 
   wb <- openxlsx::loadWorkbook(example_file)
 

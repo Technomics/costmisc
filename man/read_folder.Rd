@@ -8,6 +8,7 @@ read_folder(
   folder,
   read_function,
   .clean_file_names = TRUE,
+  .basename = FALSE,
   .id = NULL,
   .recursive = TRUE,
   ...
@@ -19,6 +20,8 @@ read_folder(
 \item{read_function}{The function to use to read each file.}
 
 \item{.clean_file_names}{Logical to clean names into snake_case or not.}
+
+\item{.basename}{Logical to only keep the \code{\link{basename}()} of each file.}
 
 \item{.id}{Optionally add an id variable to each file table as this name}
 

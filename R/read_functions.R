@@ -12,17 +12,19 @@
 #' @param folder A folder path to read.
 #' @param read_function The function to use to read each file.
 #' @param .clean_file_names Logical to clean names into snake_case or not.
+#' @param .basename Logical to only keep the \code{\link{basename}()} of each file.
 #' @param .id Optionally add an id variable to each file table as this name
 #' @param .recursive Logical to recursively load the folder.
 #' @param ... Arguments passed to \code{read_function}.
 #'
 #' @return A list of output from the `read_function`.
 #'
-read_folder <- function(folder, read_function, .clean_file_names = TRUE,
+read_folder <- function(folder, read_function, .clean_file_names = TRUE, .basename = FALSE,
                         .id = NULL, .recursive = TRUE, ...) {
 
   file_vector <- list.files(path = folder, full.names = TRUE, recursive = .recursive)
   file_names <- stringr::str_remove(file_vector, folder)
+  if (.basename) file_names <- basename(file_names)
 
   file_list <- lapply(file_vector, read_function, ...)
   names(file_list) <- file_names
@@ -107,7 +109,7 @@ col_rep <- function(str, spec_type = "readr") {
 #' @family Read Excel tables
 #'
 #' @examples
-#' example_file <- system.file("examples/excel examples.xlsx", package = "costmisc")
+#' example_file <- system.file("examples/excel_examples.xlsx", package = "costmisc")
 #'
 #' wb <- openxlsx::loadWorkbook(example_file)
 #' get_excel_tables(wb)
@@ -120,13 +122,12 @@ get_excel_tables <- function(wb, sheets = NULL) {
   if (is.null(sheets))
     sheets <- names(wb)
 
-  sheets %>%
-    purrr::map_df( ~ {
-      tbls <- openxlsx::getTables(wb, .)
-      tibble::tibble(sheet = .,
-                     table = strip_attributes(tbls, FALSE),
-                     range = attr(tbls, "refs"))
-    })
+  purrr::map_df(sheets, ~ {
+    tbls <- openxlsx::getTables(wb, .x)
+    tibble::tibble(sheet = .x,
+                   table = strip_attributes(tbls, FALSE),
+                   range = attr(tbls, "refs"))
+  })
 }
 
 #' Read Excel tables
@@ -144,7 +145,7 @@ get_excel_tables <- function(wb, sheets = NULL) {
 #' @family Read Excel tables
 #'
 #' @examples
-#' example_file <- system.file("examples/excel examples.xlsx", package = "costmisc")
+#' example_file <- system.file("examples/excel_examples.xlsx", package = "costmisc")
 #'
 #' wb <- openxlsx::loadWorkbook(example_file)
 #' head(read_excel_table(wb, "tbl_mtcars"))
@@ -157,9 +158,7 @@ read_excel_table <- function(wb, table_name, table_df = NULL) {
   if (is.null(table_df))
     table_df <- get_excel_tables(wb)
 
-  range <- table_df %>%
-    dplyr::filter(table == table_name) %>%
-    dplyr::select(sheet, range)
+  range <- dplyr::select(dplyr::filter(table_df, .data$table == table_name), .data$sheet, .data$range)
 
   if (nrow(range) != 1) stop(paste0("Table \"", table_name, "\" not uniquely found"))
 

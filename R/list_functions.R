@@ -13,9 +13,8 @@
 #' @seealso \code{\link{listindex_to_col}}
 #'
 unnest_df <- function(.data) {
-  purrr::flatten(.data) %>%
-    split(., names(.)) %>%
-    purrr::map(dplyr::bind_rows)
+  flat_data <- purrr::flatten(.data)
+  purrr::map(split(flat_data, names(flat_data)), dplyr::bind_rows)
 }
 
 #' Add id column to dataframe

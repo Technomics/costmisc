@@ -74,7 +74,7 @@ of the same type." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">costmisc</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.0</span>
       </span>
     </div>
 
@@ -123,6 +123,7 @@ of the same type.</p>
   <span class='no'>folder</span>,
   <span class='no'>read_function</span>,
   <span class='kw'>.clean_file_names</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>.basename</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
   <span class='kw'>.id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>.recursive</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
   <span class='no'>...</span>
@@ -142,6 +143,10 @@ of the same type.</p>
     <tr>
       <th>.clean_file_names</th>
       <td><p>Logical to clean names into snake_case or not.</p></td>
+    </tr>
+    <tr>
+      <th>.basename</th>
+      <td><p>Logical to only keep the <code><a href='https://rdrr.io/r/base/basename.html'>basename</a>()</code> of each file.</p></td>
     </tr>
     <tr>
       <th>.id</th>

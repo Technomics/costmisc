@@ -20,7 +20,7 @@ A tibble with the worksheet, table name, and cell references.
 returns more information.
 }
 \examples{
-example_file <- system.file("examples/excel examples.xlsx", package = "costmisc")
+example_file <- system.file("examples/excel_examples.xlsx", package = "costmisc")
 
 wb <- openxlsx::loadWorkbook(example_file)
 get_excel_tables(wb)

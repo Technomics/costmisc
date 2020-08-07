@@ -34,7 +34,7 @@ description <- list(Description = "Package with miscellaneous functions used thr
 usethis::use_data_raw()
 
 # Package dependencies
-#usethis::use_pipe()
+usethis::use_pipe()
 usethis::use_package("cli", min_version = "2.0.0")
 usethis::use_package("stringr", min_version = "1.4.0")
 usethis::use_package("stringi", min_version = "1.4.0")
