@@ -11,7 +11,7 @@ usethis::use_build_ignore("tools")
 usethis::use_lifecycle()
 
 # License
-usethis::use_gpl3_license("Technomics, Inc.")
+rnomics::use_license_prop()
 
 # Site
 usethis::use_pkgdown()
@@ -19,6 +19,9 @@ usethis::use_pkgdown()
 # Test
 usethis::use_testthat()
 usethis::use_test("read_functions")
+
+# Citation
+usethis::use_citation()
 
 ## ===== DESCRIPTION =====
 
@@ -56,7 +59,7 @@ usethis::use_news_md()
 
 rnomics::use_badge_costverse()
 usethis::use_lifecycle_badge("maturing")
-usethis::use_badge("License: GPLv3", "https://opensource.org/licenses/GPL-3.0", "https://img.shields.io/badge/License-GPLv3-blue.svg")
+rnomics::use_badge_prop()
 rnomics::use_badge_passing()
 
 ## ===== Developmental Tools =====

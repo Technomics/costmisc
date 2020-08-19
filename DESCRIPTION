@@ -1,6 +1,6 @@
 Package: costmisc
 Title: Misc costverse functions
-Version: 0.5.0
+Version: 0.5.1
 Authors@R: 
     person(given = "Adam H.",
            family = "James",
@@ -8,7 +8,7 @@ Authors@R:
            email = "ajames@technomics.net")
 Description: Package with miscellaneous functions used
     throughout the costverse.
-License: GPL-3
+License: file LICENSE
 Imports: 
     stringr (>= 1.4.0),
     lifecycle,
