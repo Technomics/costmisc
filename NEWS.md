@@ -1,3 +1,5 @@
+# costmisc 0.5.1
+
 # costmisc 0.5.0
 
 * Moved the dplyr modification functions to another package. These were purposely removed rather than deprecated. This includes both `insensitive()` and `distinct_insensitive()`.
