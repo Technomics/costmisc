@@ -1,0 +1,14 @@
+citHeader("To cite costmisc in your own work use:")
+
+citEntry(
+  entry        = "Unpublished",
+  title        = "Miscellaneous cost functions with {costmisc}",
+  author       = personList(as.person("Adam James")),
+  year         = "2020",
+  note         = "R package",
+  organization = "Technomics, Inc.",
+  url          = "https://www.technomics.net",
+  textVersion = paste("Adam James (2020).",
+        "Miscellaneous cost functions with costmisc.",
+        "Copyright 2020 Technomics, Inc.")
+)

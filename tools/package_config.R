@@ -20,6 +20,9 @@ usethis::use_pkgdown()
 usethis::use_testthat()
 usethis::use_test("read_functions")
 
+# Citation
+usethis::use_citation()
+
 ## ===== DESCRIPTION =====
 
 # Description list
