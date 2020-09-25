@@ -8,7 +8,7 @@ Authors@R:
            email = "ajames@technomics.net")
 Description: Package with miscellaneous functions used
     throughout the costverse.
-License: file LICENSE
+License: GPL-3
 Imports: 
     stringr (>= 1.4.0),
     lifecycle,

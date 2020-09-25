@@ -11,7 +11,7 @@ usethis::use_build_ignore("tools")
 usethis::use_lifecycle()
 
 # License
-rnomics::use_license_prop()
+usethis::use_gpl3_license("Technomics, Inc")
 
 # Site
 usethis::use_pkgdown()
@@ -88,10 +88,4 @@ detach("package:costmisc", unload = TRUE)
 
 ## ===== Scratch Work =====
 
-for (i in 1:4) {
-  write_file <- paste0("inst/examples/mtcars_", i, ".csv")
-
-  write.csv(mtcars[seq((i - 1) * 8 + 1, (i * 8)), ], write_file, row.names = FALSE)
-
-}
 
