@@ -1,3 +1,5 @@
+# costmisc 0.6.0
+
 # costmisc 0.5.1
 
 * Updated citation and copyright notifications.
