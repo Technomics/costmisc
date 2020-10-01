@@ -6,14 +6,14 @@
 <!-- badges: start -->
 
 [![technomics:
-costverse](https://img.shields.io/badge/technomics-costverse-EAC435.svg)](https://gitlab.technomics.net/costverse)
+costverse](https://img.shields.io/badge/technomics-costverse-EAC435.svg)](https://github.com/technomics)
 [![Lifecycle:
 maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 [![Build:
-passing](https://img.shields.io/badge/build-passing-green.svg)](https://gitlab.technomics.net/costverse/costmisc.git)
+passing](https://img.shields.io/badge/build-passing-green.svg)](https://github.com/technomics/costmisc.git)
 [![coverage: 92%25](https://img.shields.io/badge/coverage-92%25-green.svg)](https://cran.r-project.org/web/packages/covr/vignettes/how_it_works.html)
-[![technomics:
-proprietary](https://img.shields.io/badge/technomics-proprietary-00A0B2.svg)](https://gitlab.technomics.net/)
+[![License: GPL
+v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![version:
 0.5.1](https://img.shields.io/badge/version-0.5.1-blue.svg)]()
 <!-- badges: end -->
@@ -23,21 +23,19 @@ support various other packages.
 
 ## Installation
 
-### Install Directly
-
-You can install the released version of costmisc from
-[TRAN](http://shiny.technomics.net/tran/www/home/) with:
+First install the package devtools if you haven’t already.
 
 ``` r
-install.packages("costmisc", repos = "http://shiny.technomics.net/tran")
+#install.packages("devtools")
+devtools::install_github("Technomics/costmisc")
 ```
 
-### Clone Repository
+### Development version
 
-Clone the repository into a working directory of your choice. The most
-simple way is to use
-[`rnomics`](http://shiny.technomics.net/tran/www/docs/rnomics/).
+To get a bug fix, or to use a feature from the development version, you
+can install costmisc using the following.
 
 ``` r
-rnomics::gitlab_clone("costverse/costmisc", "your/file/directory/here")
+devtools::dev_mode(on = TRUE)
+devtools::install_github("Technomics/costmisc")
 ```
