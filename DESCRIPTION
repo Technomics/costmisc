@@ -9,6 +9,7 @@ Authors@R:
 Description: Package with miscellaneous functions used
     throughout the costverse.
 License: GPL-3
+URL: https://github.com/Technomics/costmisc
 Imports: 
     stringr (>= 1.4.0),
     lifecycle,

@@ -1,5 +1,7 @@
 # costmisc 0.6.0
 
+* First public release of costmisc! This package is available now on GitHub and is licensed under the GPLv3.
+
 # costmisc 0.5.1
 
 * Updated citation and copyright notifications.

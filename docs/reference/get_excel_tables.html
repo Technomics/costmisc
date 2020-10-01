@@ -73,7 +73,7 @@ returns more information." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">costmisc</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.0</span>
       </span>
     </div>
 
@@ -93,7 +93,12 @@ returns more information." />
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="https://github.com/Technomics/costmisc/">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
       </ul>
       
     </div><!--/.nav-collapse -->
@@ -108,7 +113,7 @@ returns more information." />
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>List Excel tables in a workbook</h1>
-    
+    <small class="dont-index">Source: <a href='https://github.com/Technomics/costmisc/blob/master/R/read_functions.R'><code>R/read_functions.R</code></a></small>
     <div class="hidden name"><code>get_excel_tables.Rd</code></div>
     </div>
 
@@ -117,7 +122,7 @@ returns more information." />
 returns more information.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get_excel_tables</span>(<span class='no'>wb</span>, <span class='kw'>sheets</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>get_excel_tables</span><span class='op'>(</span><span class='va'>wb</span>, sheets <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -138,19 +143,19 @@ lists all sheets.</p></td>
     <p>A tibble with the worksheet, table name, and cell references.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p>Other Read Excel tables: 
-<code><a href='read_excel_table.html'>read_excel_table</a>()</code></p></div>
+    <div class='dont-index'><p>Other Read Excel tables: <code><a href='read_excel_table.html'>read_excel_table</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>example_file</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"examples/excel_examples.xlsx"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"costmisc"</span>)
+    <pre class="examples"><div class='input'><span class='va'>example_file</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span><span class='op'>(</span><span class='st'>"examples/excel_examples.xlsx"</span>, package <span class='op'>=</span> <span class='st'>"costmisc"</span><span class='op'>)</span>
 
-<span class='no'>wb</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>openxlsx</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/pkg/openxlsx/man/loadWorkbook.html'>loadWorkbook</a></span>(<span class='no'>example_file</span>)
-<span class='fu'>get_excel_tables</span>(<span class='no'>wb</span>)</div><div class='output co'>#&gt; # A tibble: 2 x 3
+<span class='va'>wb</span> <span class='op'>&lt;-</span> <span class='fu'>openxlsx</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/openxlsx/man/loadWorkbook.html'>loadWorkbook</a></span><span class='op'>(</span><span class='va'>example_file</span><span class='op'>)</span>
+<span class='fu'>get_excel_tables</span><span class='op'>(</span><span class='va'>wb</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 2 x 3</span><span>
 #&gt;   sheet  table      range  
-#&gt;   &lt;chr&gt;  &lt;chr&gt;      &lt;chr&gt;  
-#&gt; 1 tables tbl_mtcars I2:T34 
-#&gt; 2 tables tbl_iris   B2:F152</div><div class='input'>
-</div></pre>
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>  
+#&gt; </span><span style='color: #555555;'>1</span><span> tables tbl_mtcars I2:T34 
+#&gt; </span><span style='color: #555555;'>2</span><span> tables tbl_iris   B2:F152</div><div class='input'>
+</div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -166,7 +171,7 @@ lists all sheets.</p></td>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

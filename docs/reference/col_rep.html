@@ -77,7 +77,7 @@ that take column type specifications in the same format." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">costmisc</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.0</span>
       </span>
     </div>
 
@@ -97,7 +97,12 @@ that take column type specifications in the same format." />
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="https://github.com/Technomics/costmisc/">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
       </ul>
       
     </div><!--/.nav-collapse -->
@@ -112,7 +117,7 @@ that take column type specifications in the same format." />
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Simple column specifications</h1>
-    
+    <small class="dont-index">Source: <a href='https://github.com/Technomics/costmisc/blob/master/R/read_functions.R'><code>R/read_functions.R</code></a></small>
     <div class="hidden name"><code>col_rep.Rd</code></div>
     </div>
 
@@ -125,7 +130,7 @@ Supports output for use in <code>readr</code> and <code>readxl</code>, and other
 that take column type specifications in the same format.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>col_rep</span>(<span class='no'>str</span>, <span class='kw'>spec_type</span> <span class='kw'>=</span> <span class='st'>"readr"</span>)</pre>
+    <pre class="usage"><span class='fu'>col_rep</span><span class='op'>(</span><span class='va'>str</span>, spec_type <span class='op'>=</span> <span class='st'>"readr"</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -147,8 +152,10 @@ that take column type specifications in the same format.</p>
     <p>An expanded string or a vector of column type specifications.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>col_rep</span>(<span class='st'>"c3n2dl3-2c"</span>)</div><div class='output co'>#&gt; [1] "cccnndlll--c"</div><div class='input'>
-<span class='fu'>col_rep</span>(<span class='st'>"c3n2dl3-2c"</span>, <span class='st'>"readxl"</span>)</div><div class='output co'>#&gt;  [1] "text"    "text"    "text"    "numeric" "numeric" "numeric" "logical"
+    <pre class="examples"><div class='input'><span class='fu'>col_rep</span><span class='op'>(</span><span class='st'>"c3n2dl3-2c"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] "cccnndlll--c"</div><div class='input'>
+<span class='fu'>col_rep</span><span class='op'>(</span><span class='st'>"c3n2dl3-2c"</span>, <span class='st'>"readxl"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;  [1] "text"    "text"    "text"    "numeric" "numeric" "numeric" "logical"
 #&gt;  [8] "logical" "logical" "skip"    "skip"    "text"   </div><div class='input'>
 </div></pre>
   </div>
@@ -166,7 +173,7 @@ that take column type specifications in the same format.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

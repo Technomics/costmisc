@@ -4,11 +4,8 @@
 \alias{paste_difftime}
 \title{Paste function for time difference}
 \usage{
-paste_difftime(
-  x,
-  time_msg = "Time difference of",
-  digits = getOption("digits")
-)
+paste_difftime(x, time_msg = "Time difference of",
+  digits = getOption("digits"))
 }
 \arguments{
 \item{x}{A timediff object.}

@@ -4,19 +4,14 @@
 \alias{add_missing_column}
 \title{Add missing columns to a data frame}
 \usage{
-add_missing_column(
-  .data,
-  ...,
-  .before = NULL,
-  .after = NULL,
-  .name_repair = c("check_unique", "unique", "universal", "minimal")
-)
+add_missing_column(.data, ..., .before = NULL, .after = NULL,
+  .name_repair = c("check_unique", "unique", "universal", "minimal"))
 }
 \arguments{
 \item{.data}{Data frame to append to.}
 
 \item{...}{<\code{\link[rlang:dyn-dots]{dynamic-dots}}>
-Name-value pairs, passed on to \code{\link[tibble:tibble]{tibble()}}. All values must have
+Name-value pairs, passed on to \code{\link[=tibble]{tibble()}}. All values must have
 the same size of \code{.data} or size 1.}
 
 \item{.before}{One-based column index or column name where to add the
