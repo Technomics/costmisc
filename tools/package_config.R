@@ -24,7 +24,8 @@ usethis::use_test("read_functions")
 usethis::use_citation()
 
 # GitHub
-usethis::use_github_actions()
+usethis::use_github_actions() # this includes the standard R-CMD-check
+usethis::use_github_action()
 
 ## ===== DESCRIPTION =====
 
