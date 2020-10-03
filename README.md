@@ -9,8 +9,6 @@
 costverse](https://img.shields.io/badge/technomics-costverse-EAC435.svg)](https://github.com/technomics)
 [![Lifecycle:
 maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
-[![Build:
-passing](https://img.shields.io/badge/build-passing-green.svg)](https://github.com/technomics/costmisc.git)
 [![coverage: 92%25](https://img.shields.io/badge/coverage-92%25-green.svg)](https://cran.r-project.org/web/packages/covr/vignettes/how_it_works.html)
 [![License: GPL
 v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
