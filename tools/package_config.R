@@ -25,7 +25,7 @@ usethis::use_citation()
 
 # GitHub
 usethis::use_github_actions() # this includes the standard R-CMD-check
-usethis::use_github_action()
+usethis::use_github_action("pkgdown")
 
 ## ===== DESCRIPTION =====
 
@@ -71,9 +71,6 @@ rnomics::use_badge_passing()
 cvg <- devtools::test_coverage()
 rnomics::use_badge_coverage(cvg)
 devtools::test()
-
-devtools::build_site()
-pkgdown::build_reference()
 
 devtools::build_readme()
 devtools::document()
