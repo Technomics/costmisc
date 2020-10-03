@@ -23,6 +23,9 @@ usethis::use_test("read_functions")
 # Citation
 usethis::use_citation()
 
+# GitHub
+usethis::use_github_actions()
+
 ## ===== DESCRIPTION =====
 
 # Description list
