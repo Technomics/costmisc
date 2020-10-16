@@ -28,6 +28,7 @@ head(read_excel_table(wb, "tbl_mtcars"))
 
 }
 \seealso{
-Other Read Excel tables: \code{\link{get_excel_tables}}
+Other Read Excel tables: 
+\code{\link{get_excel_tables}()}
 }
 \concept{Read Excel tables}
