@@ -84,14 +84,17 @@ devtools::load_all()
 
 ## ===== Build =====
 
-build_path <- file.path(setupr::get_dirs()$git_local, "costverse", "_builds")
-r_version <- paste(R.version$major, strsplit(R.version$minor, ".", fixed = TRUE)[[1L]][1L], sep = ".")
+build_path_root <- file.path(setupr::get_dirs()$git_local, "costverse", "_builds")
+build_path <- list(bin = file.path(build_path_root, "bin", rnomics::r_version()),
+                   src = file.path(build_path_root, "src"))
 
-bin_build_file <- devtools::build(binary = TRUE, path = file.path(build_path, "bin", r_version))
-src_build_file <- devtools::build(path = file.path(build_path, "src"))
+fs::dir_create(unlist(build_path))
+
+bin_build_file <- devtools::build(binary = TRUE, path = build_path$bin)
+src_build_file <- devtools::build(path = build_path$src)
 
 drat_repo <- file.path(setupr::get_dirs()$git_local, "costverse", "repo")
-add_to_drat(c(bin_build_file, src_build_file), drat_repo)
+rnomics::add_to_drat(c(bin_build_file, src_build_file), drat_repo)
 
 detach("package:costmisc", unload = TRUE)
 
