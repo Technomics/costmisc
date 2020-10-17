@@ -82,6 +82,8 @@ rnomics::use_badge_version()
 
 devtools::load_all()
 
+detach("package:costmisc", unload = TRUE)
+
 ## ===== Build =====
 
 build_path_root <- file.path(setupr::get_dirs()$git_local, "costverse", "_builds")
@@ -95,8 +97,6 @@ src_build_file <- devtools::build(path = build_path$src)
 
 drat_repo <- file.path(setupr::get_dirs()$git_local, "costverse", "repo")
 rnomics::add_to_drat(c(bin_build_file, src_build_file), drat_repo)
-
-detach("package:costmisc", unload = TRUE)
 
 ## ===== Scratch Work =====
 
