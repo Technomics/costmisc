@@ -27,6 +27,7 @@ get_excel_tables(wb)
 
 }
 \seealso{
-Other Read Excel tables: \code{\link{read_excel_table}}
+Other Read Excel tables: 
+\code{\link{read_excel_table}()}
 }
 \concept{Read Excel tables}

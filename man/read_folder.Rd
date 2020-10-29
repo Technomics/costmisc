@@ -4,8 +4,15 @@
 \alias{read_folder}
 \title{Read of a folder of files}
 \usage{
-read_folder(folder, read_function, .clean_file_names = TRUE,
-  .basename = FALSE, .id = NULL, .recursive = TRUE, ...)
+read_folder(
+  folder,
+  read_function,
+  .clean_file_names = TRUE,
+  .basename = FALSE,
+  .id = NULL,
+  .recursive = TRUE,
+  ...
+)
 }
 \arguments{
 \item{folder}{A folder path to read.}

@@ -57,7 +57,7 @@ First install the package devtools if you haven’t already.
 
 ``` r
 #install.packages("devtools")
-devtools::install_github("Technomics/costmisc")
+install.packages("costmisc", repos = "https://technomics.github.io/repo/")
 ```
 
 ### Development version
