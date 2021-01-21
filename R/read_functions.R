@@ -165,7 +165,7 @@ read_excel_table <- function(wb, table_name, table_df = NULL) {
   parse_range <- function(range) {
     cells <- stringr::str_split(range, ":", simplify = T)
     colrange <- openxlsx::convertFromExcelRef(cells)
-    rowrange <- stringr::str_remove(cells, "[^0-9]")
+    rowrange <- stringr::str_remove_all(cells, "[^0-9]")
 
     list(cols = colrange[1]:colrange[2],
          rows = rowrange[1]:rowrange[2])
