@@ -1,3 +1,7 @@
+# costmisc 0.6.1
+
+* Added a new function `read_json_zip()` to read a folder of JSON files into a list of tibbles.
+
 # costmisc 0.6.0
 
 * First public release of costmisc! This package is available now on GitHub and is licensed under the GPLv3.
