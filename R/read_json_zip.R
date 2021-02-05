@@ -4,9 +4,10 @@
 #' \code{read_json_zip()} will read all JSON files from a zipped folder into a list of tibbles.
 #'
 #' @param path Path to the .zip file.
+#' @param .warn_utf8_bom Logical whether to report UTF8 byte-order-mark errors.
 #'
 #' @export
-read_json_zip <- function(path) {
+read_json_zip <- function(path, .warn_utf8_bom = TRUE) {
 
   zip_contents <- zip::zip_list(path)
 
@@ -38,24 +39,23 @@ read_json_zip <- function(path) {
                                      }
     )
 
-
-    # loop through each value in the list, changing a NULL to NA
-    fix_null <- function(x) {
-      if (is.null(x)) x <- NA
-      x
-    }
-    json_list_fixed <- purrr::map(json_list, ~ purrr::modify(.x, fix_null))
-
     # handle a list of rows or a single row
-    f_flatten <- function(x) if (is.list(x)) purrr::flatten(x) else x
+    f_flatten <- function(x) {
+      if (is.list(x)) {
+        purrr::flatten(x)
+      } else {
+        if (is.null(x)) NA else x
+      }
+
+    }
 
     # flatten the list to a dataframe
-    purrr::map_dfr(json_list_fixed, f_flatten)
+    purrr::map_dfr(json_list, f_flatten)
   }
 
   lst_json <- purrr::map(json_to_read, read_zip_file)
 
-  if (any(utf_warnings))
+  if (any(utf_warnings) & .warn_utf8_bom)
     warning(paste("JSON string contains (illegal) UTF8 byte-order-mark in the following files:",
                   paste(names(utf_warnings)[utf_warnings], collapse = ", "), sep = "\n"))
 
