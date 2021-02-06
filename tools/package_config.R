@@ -103,6 +103,10 @@ rnomics::add_to_drat(c(bin_build_file, src_build_file), drat_repo)
 
 ## ===== Scratch Work =====
 
+path <- system.file("extdata", "Sample_FlexFile_A.zip", package = "flexample")
+
+read_json_zip(path)
+
 # Build
 R_3_6_path <- "C:/Program Files/R/R-3.6.3/bin/x64/R"
 
