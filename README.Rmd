@@ -38,6 +38,7 @@ The *costverse* began as an internal [Technomics](https://www.technomics.net/) p
 
  - [costmisc](https://github.com/Technomics/costmisc/)
  - [readflexfile](https://github.com/Technomics/readflexfile/)
+ - [flexample](https://github.com/Technomics/flexample/)
  
 Do not hesitate to contact us if you have questions about what else is in the works!
 

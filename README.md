@@ -13,28 +13,29 @@ maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www
 v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![R build
 status](https://github.com/Technomics/costmisc/workflows/R-CMD-check/badge.svg)](https://github.com/Technomics/costmisc/actions)
+[![coverage:
+60.3%25](https://img.shields.io/badge/coverage-60.3%25-yellow.svg)](https://cran.r-project.org/web/packages/covr/vignettes/how_it_works.html)
 [![version:
-0.6.1](https://img.shields.io/badge/version-0.6.1-blue.svg)]()
-[![coverage: 60.3%25](https://img.shields.io/badge/coverage-60.3%25-yellow.svg)](https://cran.r-project.org/web/packages/covr/vignettes/how_it_works.html)
+0.6.2](https://img.shields.io/badge/version-0.6.2-blue.svg)]()
 <!-- badges: end -->
 
 The package costmisc adds miscellaneous functions to the costverse that
 support various other packages.
 
 Check out the [pkgdown](https://technomics.github.io/costmisc/) site to
-browse the features\!
+browse the features!
 
 If you find a bug or have an idea for a new feature, please use the
 [issue board](https://github.com/Technomics/costmisc/issues).
 
-## Welcome to the costverse\!
+## Welcome to the costverse!
 
 The *costverse* is a collection of R packages, inspired by the
 *tidyverse*. The goal is to create a cohesive ecosystem of R packages to
 streamline tasks encountered by analysts in the cost analysis
 profession. This can range from importing common data formats, working
 with difficult data structures (e.g., a WBS), or applying more advanced
-analytical techniques\!
+analytical techniques!
 
 The *costverse* began as an internal
 [Technomics](https://www.technomics.net/) project to develop a set of
@@ -45,11 +46,12 @@ to use them under the
 [GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html) - all that we ask
 is to please cite us as the authors.
 
-  - [costmisc](https://github.com/Technomics/costmisc/)
-  - [readflexfile](https://github.com/Technomics/readflexfile/)
+-   [costmisc](https://github.com/Technomics/costmisc/)
+-   [readflexfile](https://github.com/Technomics/readflexfile/)
+-   [flexample](https://github.com/Technomics/flexample/)
 
 Do not hesitate to contact us if you have questions about what else is
-in the works\!
+in the works!
 
 ## Installation
 
