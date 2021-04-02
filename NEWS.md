@@ -1,3 +1,8 @@
+# costmisc 0.6.2
+
+* Minor bug fix in `add_id_col()`. (#12)
+* Added pattern matching and error handling to `read_folder()`. Files will now return `NULL` instead of throwing an error. (#1, #11)
+
 # costmisc 0.6.1
 
 * Added a new function `read_json_zip()` to read a folder of JSON files into a list of tibbles.

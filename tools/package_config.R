@@ -75,7 +75,6 @@ cvg <- devtools::test_coverage()
 rnomics::use_badge_coverage(cvg)
 devtools::test()
 
-devtools::build_readme()
 devtools::document()
 devtools::spell_check()
 devtools::check()
@@ -102,36 +101,4 @@ drat_repo <- file.path(setupr::get_dirs()$git_local, "costverse", "repo")
 rnomics::add_to_drat(c(bin_build_file, src_build_file), drat_repo)
 
 ## ===== Scratch Work =====
-
-path <- system.file("extdata", "Sample_FlexFile_A.zip", package = "flexample")
-
-read_json_zip(path)
-
-# Build
-R_3_6_path <- "C:/Program Files/R/R-3.6.3/bin/x64/R"
-
-cmd <- "/path/to/R3.6.3/R CMD INSTALL --build /path/to/yourpackage
-mv yourpackage.*.zip /path/for/R3.6users"
-
-pkg_loc <- paste0("\"", file.path(setupr::get_dirs()$git_local, "costverse", "costmisc"), "\"")
-
-cmd <- paste0(R_3_6_path, " CMD INSTALL --build ", pkg_loc)
-
-z <- system2(cmd, invisible = FALSE)
-
-pkgbuild::rcmd_build_tools("INSTALL --build")
-
-cmd <- "cd /d \"C:/Users/ajames/Software/git local/costverse\""
-shell(cmd)
-
-cmd <- paste0(R_3_6_path, " CMD INSTALL --build ", rstudioapi::getActiveProject())
-
-q <- function(x) paste0("\"", x, "\"")
-
-cmd <- paste0(q(R_3_6_path), " CMD INSTALL --build ", pkg_loc)
-
-rnomics::bash_run_command(paste("cd", q(build_path_root)), show = TRUE)
-rnomics::bash_run_command(cmd, show = TRUE)
-
-cat(paste("cd", q(build_path_root)))
 

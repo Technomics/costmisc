@@ -1,32 +1,40 @@
 
 #' Read of a folder of files
 #'
-#' @description
-#'
 #' \code{read_folder()} is a wrapper around \code{lapply} to read an entire folder of files
-#' into a list. No file checking is implemented, so each file in the target folder must be
-#' of the same type.
+#' into a list. A \code{NULL} is returned if the file is unable to be read.
 #'
 #' @export
 #'
 #' @param folder A folder path to read.
 #' @param read_function The function to use to read each file.
+#' @param pattern An optional \link{regex}. Only file names which match the regular expression will be read.
 #' @param .clean_file_names Logical to clean names into snake_case or not.
 #' @param .basename Logical to only keep the \code{\link{basename}()} of each file.
-#' @param .id Optionally add an id variable to each file table as this name
+#' @param .id Character. Optionally add an id variable to each table, named as this value.
 #' @param .recursive Logical to recursively load the folder.
 #' @param ... Arguments passed to \code{read_function}.
 #'
-#' @return A list of output from the `read_function`.
+#' @return A list of output from the `read_function`. A \code{NULL} is returned if the file is
+#' unable to be read.
 #'
-read_folder <- function(folder, read_function, .clean_file_names = TRUE, .basename = FALSE,
+read_folder <- function(folder, read_function, pattern = NULL, .clean_file_names = TRUE, .basename = FALSE,
                         .id = NULL, .recursive = TRUE, ...) {
 
-  file_vector <- list.files(path = folder, full.names = TRUE, recursive = .recursive)
+  file_vector <- list.files(path = folder, pattern = pattern, full.names = TRUE, recursive = .recursive)
   file_names <- stringr::str_remove(file_vector, folder)
   if (.basename) file_names <- basename(file_names)
 
-  file_list <- lapply(file_vector, read_function, ...)
+  read_function_try <- function(x, ...) {
+    tryCatch(read_function(x, ...),
+             error = function(e) {
+               warning(paste("cannot read file:", x))
+               return(NULL)
+             })
+  }
+
+
+  file_list <- lapply(file_vector, read_function_try, ...)
   names(file_list) <- file_names
 
   if (.clean_file_names) {

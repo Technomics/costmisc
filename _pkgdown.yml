@@ -6,6 +6,7 @@ reference:
   - col_rep
   - get_excel_tables
   - read_excel_table
+  - read_json_zip
 - title: Lists
   contents:
   - add_id_col
