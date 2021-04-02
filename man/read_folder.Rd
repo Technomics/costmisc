@@ -7,6 +7,7 @@
 read_folder(
   folder,
   read_function,
+  pattern = NULL,
   .clean_file_names = TRUE,
   .basename = FALSE,
   .id = NULL,
@@ -19,21 +20,23 @@ read_folder(
 
 \item{read_function}{The function to use to read each file.}
 
+\item{pattern}{An optional \link{regex}. Only file names which match the regular expression will be read.}
+
 \item{.clean_file_names}{Logical to clean names into snake_case or not.}
 
 \item{.basename}{Logical to only keep the \code{\link{basename}()} of each file.}
 
-\item{.id}{Optionally add an id variable to each file table as this name}
+\item{.id}{Character. Optionally add an id variable to each table, named as this value.}
 
 \item{.recursive}{Logical to recursively load the folder.}
 
 \item{...}{Arguments passed to \code{read_function}.}
 }
 \value{
-A list of output from the \code{read_function}.
+A list of output from the \code{read_function}. A \code{NULL} is returned if the file is
+unable to be read.
 }
 \description{
 \code{read_folder()} is a wrapper around \code{lapply} to read an entire folder of files
-into a list. No file checking is implemented, so each file in the target folder must be
-of the same type.
+into a list. A \code{NULL} is returned if the file is unable to be read.
 }
