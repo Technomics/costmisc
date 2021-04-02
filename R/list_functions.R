@@ -28,10 +28,12 @@ unnest_df <- function(.data) {
 #' @param var Character name of the new id column.
 #'
 add_id_col <- function(.data, value = 1L, var = "doc_id") {
-  if (class(.data) == "data.frame") {
+  if (is.data.frame(.data)) {
     tibble::add_column(.data, !!var := value, .before = 1)
-  } else if (class(.data) == "list") {
+  } else if (is.list(.data)) {
     purrr::map(.data, ~ tibble::add_column(., !!var := value, .before = 1))
+  } else {
+    stop("Unknown data format")
   }
 }
 
