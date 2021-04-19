@@ -8,7 +8,7 @@ clean_by(by)
 }
 \arguments{
 \item{by}{A character vector of variables to join by. Same specification as used in
-\code{\link[dplyr]{join}}.\cr
+\code{\link[dplyr]{mutate-joins}}.\cr
 \cr
 To join by different variables on \code{x} and \code{y} use a named vector.
 For example, by = c("a" = "b") will match \code{x$a} to \code{y$b}.}
