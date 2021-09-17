@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Read of a folder of files — read_folder • costmisc</title>
+<title>Create a flat file from multiple data frames — flatten_data • costmisc</title>
 
 
 <!-- jquery -->
@@ -39,9 +39,10 @@
 
 
 
-<meta property="og:title" content="Read of a folder of files — read_folder" />
-<meta property="og:description" content="read_folder() is a wrapper around lapply to read an entire folder of files
-into a list. A NULL is returned if the file is unable to be read." />
+<meta property="og:title" content="Create a flat file from multiple data frames — flatten_data" />
+<meta property="og:description" content="A generic function that is used to create a single flat file from a list of data
+frames. This list is usually created by reading in a data format
+with data spanning multiple tables." />
 
 
 
@@ -112,68 +113,35 @@ into a list. A NULL is returned if the file is unable to be read." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Read of a folder of files</h1>
-    <small class="dont-index">Source: <a href='https://github.com/Technomics/costmisc/blob/master/R/read_functions.R'><code>R/read_functions.R</code></a></small>
-    <div class="hidden name"><code>read_folder.Rd</code></div>
+    <h1>Create a flat file from multiple data frames</h1>
+    <small class="dont-index">Source: <a href='https://github.com/Technomics/costmisc/blob/master/R/flatten_data.R'><code>R/flatten_data.R</code></a></small>
+    <div class="hidden name"><code>flatten_data.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p><code>read_folder()</code> is a wrapper around <code>lapply</code> to read an entire folder of files
-into a list. A <code>NULL</code> is returned if the file is unable to be read.</p>
+    <p>A generic function that is used to create a single flat file from a list of data
+frames. This list is usually created by reading in a data format
+with data spanning multiple tables.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>read_folder</span><span class='op'>(</span>
-  <span class='va'>folder</span>,
-  <span class='va'>read_function</span>,
-  pattern <span class='op'>=</span> <span class='cn'>NULL</span>,
-  .clean_file_names <span class='op'>=</span> <span class='cn'>TRUE</span>,
-  .basename <span class='op'>=</span> <span class='cn'>FALSE</span>,
-  .id <span class='op'>=</span> <span class='cn'>NULL</span>,
-  .recursive <span class='op'>=</span> <span class='cn'>TRUE</span>,
-  <span class='va'>...</span>
-<span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>flatten_data</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>folder</th>
-      <td><p>A folder path to read.</p></td>
-    </tr>
-    <tr>
-      <th>read_function</th>
-      <td><p>The function to use to read each file.</p></td>
-    </tr>
-    <tr>
-      <th>pattern</th>
-      <td><p>An optional <a href='https://rdrr.io/r/base/regex.html'>regex</a>. Only file names which match the regular expression will be read.</p></td>
-    </tr>
-    <tr>
-      <th>.clean_file_names</th>
-      <td><p>Logical to clean names into snake_case or not.</p></td>
-    </tr>
-    <tr>
-      <th>.basename</th>
-      <td><p>Logical to only keep the <code><a href='https://rdrr.io/r/base/basename.html'>basename</a>()</code> of each file.</p></td>
-    </tr>
-    <tr>
-      <th>.id</th>
-      <td><p>Character. Optionally add an id variable to each table, named as this value.</p></td>
-    </tr>
-    <tr>
-      <th>.recursive</th>
-      <td><p>Logical to recursively load the folder.</p></td>
+      <th>x</th>
+      <td><p>A list of one or more collections of data frames to be flattened.</p></td>
     </tr>
     <tr>
       <th>...</th>
-      <td><p>Arguments passed to <code>read_function</code>.</p></td>
+      <td><p>Arguments passed on to methods.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A list of output from the <code>read_function</code>. A <code>NULL</code> is returned if the file is
-unable to be read.</p>
+    <p>A data frame with the flat file representation of the input data.</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
