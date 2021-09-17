@@ -17,6 +17,9 @@ reference:
   - as_int
   - strip_attributes
   - is_scalar_numeric
+- title: Generics
+  contents:
+  - flatten_data
 - title: Misc
   contents:
   - clean_by
