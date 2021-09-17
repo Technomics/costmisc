@@ -1,3 +1,7 @@
+# costmisc 0.6.3
+
+* Moved the `flatten_data()` generic from readflexfile into costmisc. This should have no impact to the user.
+
 # costmisc 0.6.2
 
 * Minor bug fix in `add_id_col()`. (#12)

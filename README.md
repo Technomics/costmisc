@@ -16,7 +16,7 @@ status](https://github.com/Technomics/costmisc/workflows/R-CMD-check/badge.svg)]
 [![coverage:
 60.3%25](https://img.shields.io/badge/coverage-60.3%25-yellow.svg)](https://cran.r-project.org/web/packages/covr/vignettes/how_it_works.html)
 [![version:
-0.6.2](https://img.shields.io/badge/version-0.6.2-blue.svg)]()
+0.6.3](https://img.shields.io/badge/version-0.6.3-blue.svg)]()
 <!-- badges: end -->
 
 The package costmisc adds miscellaneous functions to the costverse that
