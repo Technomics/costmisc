@@ -55,10 +55,10 @@ in the works!
 
 ## Installation
 
-First install the package devtools if you haven’t already.
+The stable version can be installed directly from the Technomics
+repository.
 
 ``` r
-#install.packages("devtools")
 install.packages("costmisc", repos = "https://technomics.github.io/repo/")
 ```
 
@@ -67,7 +67,11 @@ install.packages("costmisc", repos = "https://technomics.github.io/repo/")
 To get a bug fix, or to use a feature from the development version, you
 can install costmisc using the following.
 
+First install the package devtools if you haven’t already.
+
 ``` r
+#install.packages("devtools")
+
 devtools::dev_mode(on = TRUE)
 devtools::install_github("Technomics/costmisc")
 ```
