@@ -20,8 +20,8 @@ knitr::opts_chunk$set(
 [![Lifecycle: maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![R build status](https://github.com/Technomics/costmisc/workflows/R-CMD-check/badge.svg)](https://github.com/Technomics/costmisc/actions)
-[![coverage: 60.3%25](https://img.shields.io/badge/coverage-60.3%25-yellow.svg)](https://cran.r-project.org/web/packages/covr/vignettes/how_it_works.html)
-[![version: 0.6.3](https://img.shields.io/badge/version-0.6.3-blue.svg)]()
+[![version: 0.6.4](https://img.shields.io/badge/version-0.6.4-blue.svg)]()
+[![coverage: 56.5%25](https://img.shields.io/badge/coverage-56.5%25-yellow.svg)](https://cran.r-project.org/web/packages/covr/vignettes/how_it_works.html)
 <!-- badges: end -->
 
 The package costmisc adds miscellaneous functions to the costverse that support various other packages.
@@ -44,19 +44,21 @@ Do not hesitate to contact us if you have questions about what else is in the wo
 
 ## Installation
 
-First install the package devtools if you haven't already.
+The stable version can be installed directly from the Technomics repository.
 
 ```{r eval=FALSE}
-#install.packages("devtools")
 install.packages("costmisc", repos = "https://technomics.github.io/repo/")
-
 ```
 
 ### Development version
 
 To get a bug fix, or to use a feature from the development version, you can install costmisc using the following. 
 
+First install the package devtools if you haven't already.
+
 ```{r eval=FALSE}
+#install.packages("devtools")
+
 devtools::dev_mode(on = TRUE)
 devtools::install_github("Technomics/costmisc")
 ```

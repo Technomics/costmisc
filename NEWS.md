@@ -1,3 +1,7 @@
+# costmisc 0.6.4
+
+* Added the function `write_json_zip()` to write a list of tibbles into a zipped folder of JSON files.
+
 # costmisc 0.6.3
 
 * Moved the `flatten_data()` generic from readflexfile into costmisc. This should have no impact to the user.

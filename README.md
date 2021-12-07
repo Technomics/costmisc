@@ -13,10 +13,10 @@ maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www
 v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![R build
 status](https://github.com/Technomics/costmisc/workflows/R-CMD-check/badge.svg)](https://github.com/Technomics/costmisc/actions)
-[![coverage:
-60.3%25](https://img.shields.io/badge/coverage-60.3%25-yellow.svg)](https://cran.r-project.org/web/packages/covr/vignettes/how_it_works.html)
 [![version:
-0.6.3](https://img.shields.io/badge/version-0.6.3-blue.svg)]()
+0.6.4](https://img.shields.io/badge/version-0.6.4-blue.svg)]()
+[![coverage:
+56.5%25](https://img.shields.io/badge/coverage-56.5%25-yellow.svg)](https://cran.r-project.org/web/packages/covr/vignettes/how_it_works.html)
 <!-- badges: end -->
 
 The package costmisc adds miscellaneous functions to the costverse that
@@ -55,10 +55,10 @@ in the works!
 
 ## Installation
 
-First install the package devtools if you haven’t already.
+The stable version can be installed directly from the Technomics
+repository.
 
 ``` r
-#install.packages("devtools")
 install.packages("costmisc", repos = "https://technomics.github.io/repo/")
 ```
 
@@ -67,7 +67,11 @@ install.packages("costmisc", repos = "https://technomics.github.io/repo/")
 To get a bug fix, or to use a feature from the development version, you
 can install costmisc using the following.
 
+First install the package devtools if you haven’t already.
+
 ``` r
+#install.packages("devtools")
+
 devtools::dev_mode(on = TRUE)
 devtools::install_github("Technomics/costmisc")
 ```

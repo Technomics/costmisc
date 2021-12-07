@@ -1,12 +1,13 @@
 destination: docs
 reference:
-- title: Read
+- title: Read/Write
   contents:
   - read_folder
   - col_rep
   - get_excel_tables
   - read_excel_table
   - read_json_zip
+  - write_json_zip
 - title: Lists
   contents:
   - add_id_col
@@ -17,6 +18,9 @@ reference:
   - as_int
   - strip_attributes
   - is_scalar_numeric
+- title: Generics
+  contents:
+  - flatten_data
 - title: Misc
   contents:
   - clean_by

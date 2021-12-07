@@ -6,6 +6,8 @@
 #' @param path Path to the .zip file.
 #' @param .warn_utf8_bom Logical whether to report UTF8 byte-order-mark errors.
 #'
+#' @family JSON list functions
+#'
 #' @export
 read_json_zip <- function(path, .warn_utf8_bom = TRUE) {
 
@@ -51,6 +53,42 @@ read_json_zip <- function(path, .warn_utf8_bom = TRUE) {
                   paste(names(utf_warnings)[utf_warnings], collapse = ", "), sep = "\n"))
 
   lst_json
+
+}
+
+#' Write a list of data.frames to zipped JSON
+#'
+#' \code{write_json_zip()} will write each data.frame in a named list to individual JSON files
+#' inside of a zipped folder.
+#'
+#' @param x A list of named data.frames to write to a zipped folder.
+#' @param path Path for the new .zip file (should include ".zip" at the end).
+#' @param ... Additional arguments passed to \code{\link[jsonlite]{write_json}()}.
+#'
+#' @family JSON list functions
+#'
+#' @export
+write_json_zip <- function(x, path, ...) {
+
+  # create a temporary directory
+  tf <- tempfile(pattern = "flexfile", tmpdir = tempdir(check = TRUE))
+
+  if (dir.exists(tf)) unlink(tf, recursive = TRUE)
+  dir.create(tf)
+
+  temp_ff_path <- normalizePath(tf, winslash = "/")
+
+  # write each list item into the directory
+  file_names <- file.path(temp_ff_path, paste0(names(x), ".json"))
+  purrr::walk2(x, file_names, jsonlite::write_json, ... = ...)
+
+  # write to zip (notice using zipr function for relative paths)
+  zip::zipr(path, files = file_names)
+
+  # delete the temp directory
+  if (dir.exists(tf)) unlink(tf, recursive = TRUE)
+
+  invisible(tools::file_path_as_absolute(path))
 
 }
 
