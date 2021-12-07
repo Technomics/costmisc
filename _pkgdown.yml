@@ -1,12 +1,13 @@
 destination: docs
 reference:
-- title: Read
+- title: Read/Write
   contents:
   - read_folder
   - col_rep
   - get_excel_tables
   - read_excel_table
   - read_json_zip
+  - write_json_zip
 - title: Lists
   contents:
   - add_id_col
