@@ -76,10 +76,10 @@ write_json_zip <- function(x, path, ...) {
   if (dir.exists(tf)) unlink(tf, recursive = TRUE)
   dir.create(tf)
 
-  temp_ff_path <- normalizePath(tf, winslash = "/")
+  temp_path <- normalizePath(tf, winslash = "/")
 
   # write each list item into the directory
-  file_names <- file.path(temp_ff_path, paste0(names(x), ".json"))
+  file_names <- file.path(temp_path, paste0(names(x), ".json"))
   purrr::walk2(x, file_names, jsonlite::write_json, ... = ...)
 
   # write to zip (notice using zipr function for relative paths)
