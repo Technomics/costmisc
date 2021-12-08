@@ -71,7 +71,7 @@ read_json_zip <- function(path, .warn_utf8_bom = TRUE) {
 write_json_zip <- function(x, path, ...) {
 
   # create a temporary directory
-  tf <- tempfile(pattern = "flexfile", tmpdir = tempdir(check = TRUE))
+  tf <- tempfile(pattern = "costmisc", tmpdir = tempdir(check = TRUE))
 
   if (dir.exists(tf)) unlink(tf, recursive = TRUE)
   dir.create(tf)
