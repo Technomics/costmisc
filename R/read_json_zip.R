@@ -71,15 +71,15 @@ read_json_zip <- function(path, .warn_utf8_bom = TRUE) {
 write_json_zip <- function(x, path, ...) {
 
   # create a temporary directory
-  tf <- tempfile(pattern = "flexfile", tmpdir = tempdir(check = TRUE))
+  tf <- tempfile(pattern = "costmisc", tmpdir = tempdir(check = TRUE))
 
   if (dir.exists(tf)) unlink(tf, recursive = TRUE)
   dir.create(tf)
 
-  temp_ff_path <- normalizePath(tf, winslash = "/")
+  temp_path <- normalizePath(tf, winslash = "/")
 
   # write each list item into the directory
-  file_names <- file.path(temp_ff_path, paste0(names(x), ".json"))
+  file_names <- file.path(temp_path, paste0(names(x), ".json"))
   purrr::walk2(x, file_names, jsonlite::write_json, ... = ...)
 
   # write to zip (notice using zipr function for relative paths)
