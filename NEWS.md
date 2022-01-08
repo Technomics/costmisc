@@ -1,3 +1,7 @@
+# costmisc 0.6.5
+
+* Added the function `check_pkg_suggests()` to check if packages are installed for the user. (#7)
+
 # costmisc 0.6.4
 
 * Added the function `write_json_zip()` to write a list of tibbles into a zipped folder of JSON files.

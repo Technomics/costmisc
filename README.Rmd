@@ -20,8 +20,8 @@ knitr::opts_chunk$set(
 [![Lifecycle: maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![R build status](https://github.com/Technomics/costmisc/workflows/R-CMD-check/badge.svg)](https://github.com/Technomics/costmisc/actions)
-[![version: 0.6.4](https://img.shields.io/badge/version-0.6.4-blue.svg)]()
 [![coverage: 56.5%25](https://img.shields.io/badge/coverage-56.5%25-yellow.svg)](https://cran.r-project.org/web/packages/covr/vignettes/how_it_works.html)
+[![version: 0.6.5](https://img.shields.io/badge/version-0.6.5-blue.svg)]()
 <!-- badges: end -->
 
 The package costmisc adds miscellaneous functions to the costverse that support various other packages.

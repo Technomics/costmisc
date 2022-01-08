@@ -3,6 +3,7 @@
 export(add_id_col)
 export(add_missing_column)
 export(as_int)
+export(check_pkg_suggests)
 export(clean_by)
 export(col_rep)
 export(fix_json_null)
