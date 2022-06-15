@@ -1,7 +1,7 @@
 
-#' Format Contract Number
+#' Format contract number
 #'
-#' Takes in a single contract number and returns a consistently-formatted
+#' \code{format_contract()} takes in a single contract number and returns a consistently-formatted
 #' contract number, according to user controls for the output.
 #'
 #' @param contract Character string, contract number.
@@ -12,28 +12,25 @@
 #'
 #' @examples \preformatted{
 #' # control the output with the two logical parameters
-#' format_con("FA8616-14-D-6060:0001",
-#'            hyphenated = TRUE,
-#'            master_only = FALSE)
-#' format_con("FA8620-15-G-4040-0039",
-#'            hyphenated = TRUE,
-#'            master_only = TRUE)
-#' format_con("FA8620-15-G-4040-FA8620-15-F-4040",
-#'            hyphenated = FALSE,
-#'            master_only = TRUE)
-#' format_con("FA862015C4040",
-#'            hyphenated = FALSE,
-#'            master_only = FALSE)
+#' format_contract("FA8616-14-D-6060:0001",
+#'                 hyphenated = TRUE,
+#'                 master_only = FALSE)
+#' format_contract("FA8620-15-G-4040-0039",
+#'                 hyphenated = TRUE,
+#'                 master_only = TRUE)
+#' format_contract("FA8620-15-G-4040-FA8620-15-F-4040",
+#'                 hyphenated = FALSE,
+#'                 master_only = TRUE)
+#' format_contract("FA862015C4040",
+#'                 hyphenated = FALSE,
+#'                 master_only = FALSE)
 #' }
 #'
 #' @export
-#'
-
-format_con <- function(contract, hyphenated = TRUE, master_only = FALSE) {
+format_contract <- function(contract, hyphenated = TRUE, master_only = FALSE) {
 
   ### writing to take a single contract number
   ### easier for logic to be applied to each one
-  ### separate func for applying it to a vector of contracts
 
   # abort function for NAs
   if (is.na(contract)) return(NA_character_)
