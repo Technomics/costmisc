@@ -2,7 +2,7 @@
 #' Check if Packages are Installed
 #'
 #' \code{check_pkg_suggests()} checks to see if packages are installed. This can be
-#' used to check for the existance of packages in the Suggests line.
+#' used to check for the existence of packages in the Suggests line.
 #'
 #' @param pkg A vector of character package names.
 #'

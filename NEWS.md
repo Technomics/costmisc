@@ -1,3 +1,7 @@
+# costmisc (development version)
+
+* Added in function `change_case_from_spec()` to allow easy changing of case from a file spec. Moved and re-factored code for `data_model_to_snake()` and `snake_to_data_model()` from `readflexfile` to utilize this new function.
+
 # costmisc 0.6.5
 
 * Added the function `check_pkg_suggests()` to check if packages are installed for the user. (#7)
