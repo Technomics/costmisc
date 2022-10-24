@@ -57,3 +57,11 @@ the 'fields' table with the suffix "_name" (e.g., 'new_case_name').\cr
 To access this specific case for conversion, simply use 'new_case' as the argument value for
 either \code{from_case} or \code{to_case}.
 }
+\seealso{
+Other Data Spec Functions: 
+\code{\link{add_missing_spec_cols}()},
+\code{\link{add_missing_spec_tables}()},
+\code{\link{check_spec}()},
+\code{\link{coerce_to_spec}()}
+}
+\concept{Data Spec Functions}

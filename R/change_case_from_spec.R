@@ -26,6 +26,8 @@
 #' defaults to the base case.
 #' @param add_missing Logical whether to add in missing tables and columns.
 #'
+#' @family Data Spec Functions
+#'
 #' @export
 change_case_from_spec <- function(table_list, table_spec, from_case = NULL, to_case = NULL, add_missing = FALSE) {
 

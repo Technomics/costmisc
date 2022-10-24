@@ -1,6 +1,6 @@
 Package: costmisc
 Title: Misc costverse functions
-Version: 0.6.5.9000
+Version: 0.7.0
 Authors@R: 
     person(given = "Adam H.",
            family = "James",
@@ -22,11 +22,15 @@ Imports:
     janitor (>= 2.0.0),
     fs (>= 1.4.1),
     jsonlite (>= 1.6.1),
-    zip (>= 2.1.1)
+    zip (>= 2.1.1),
+    tidyselect (>= 1.1.2),
+    magrittr,
+    readr (>= 2.0.0),
+    glue (>= 1.6.0)
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
 RdMacros: lifecycle
 Suggests: 
     testthat,

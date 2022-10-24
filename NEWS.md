@@ -1,6 +1,7 @@
-# costmisc (development version)
+# costmisc 0.7.0
 
 * Added in function `change_case_from_spec()` to allow easy changing of case from a file spec. Moved and re-factored code for `data_model_to_snake()` and `snake_to_data_model()` from `readflexfile` to utilize this new function.
+* Added functions related to checking the file spec. This includes `check_spec()`, `coerce_to_spec()`, `add_missing_spec_cols()`, and `add_missing_spec_tables()`. This enables better reusability throughout the costverse.
 
 # costmisc 0.6.5
 
