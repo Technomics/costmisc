@@ -11,7 +11,8 @@ change_case_from_spec(
   table_spec,
   from_case = NULL,
   to_case = NULL,
-  add_missing = FALSE
+  add_missing = FALSE,
+  add_missing_by_type = NULL
 )
 
 data_model_to_snake(table_list, table_spec)
@@ -30,6 +31,9 @@ defaults to the base case.}
 defaults to the base case.}
 
 \item{add_missing}{Logical whether to add in missing tables and columns.}
+
+\item{add_missing_by_type}{Character vector of values from the spec 'type' column.
+Only tables of this type will be added back in if \code{add_missing = TRUE}.}
 }
 \description{
 \code{change_case_from_spec()} renames from one case to another from the file spec.

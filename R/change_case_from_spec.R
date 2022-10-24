@@ -25,11 +25,16 @@
 #' @param to_case String name of the case to convert to. If \code{NULL},
 #' defaults to the base case.
 #' @param add_missing Logical whether to add in missing tables and columns.
+#' @param add_missing_by_type Character vector of values from the spec 'type' column.
+#' Only tables of this type will be added back in if \code{add_missing = TRUE}.
 #'
 #' @family Data Spec Functions
 #'
 #' @export
-change_case_from_spec <- function(table_list, table_spec, from_case = NULL, to_case = NULL, add_missing = FALSE) {
+change_case_from_spec <- function(table_list, table_spec,
+                                  from_case = NULL, to_case = NULL,
+                                  add_missing = FALSE,
+                                  add_missing_by_type = NULL) {
 
   if (is.null(from_case)) {
     from_table_name <- "table"
@@ -76,12 +81,14 @@ change_case_from_spec <- function(table_list, table_spec, from_case = NULL, to_c
     }
 
     # the check is required to add in missing
-    check <- check_spec(table_list, table_spec, .silent = TRUE)
+    check <- check_spec(table_list, table_spec_add,
+                        .silent = TRUE,
+                        .include_table_type = add_missing_by_type)
 
     # add in the missing tables and columns in the base case
     table_list <- table_list %>%
-      add_missing_spec_tables(table_spec, check) %>%
-      add_missing_spec_cols(table_spec, new_name = "field")
+      add_missing_spec_tables(table_spec_add, check) %>%
+      add_missing_spec_cols(table_spec_add, new_name = "field")
 
     # if there is a to_case, round trip the field names to this
     if (!is.null(to_case)) {
@@ -115,7 +122,10 @@ change_case_from_spec <- function(table_list, table_spec, from_case = NULL, to_c
 #' @export
 data_model_to_snake <- function(table_list, table_spec) {
 
-  change_case_from_spec(table_list, table_spec, from_case = NULL, to_case = "snake", add_missing = TRUE)
+  change_case_from_spec(table_list, table_spec,
+                        from_case = NULL, to_case = "snake",
+                        add_missing = TRUE,
+                        add_missing_by_type = "submission")
 
 }
 
@@ -129,6 +139,8 @@ data_model_to_snake <- function(table_list, table_spec) {
 #' @export
 snake_to_data_model <- function(table_list, table_spec) {
 
-  change_case_from_spec(table_list, table_spec, from_case = "snake", to_case = NULL, add_missing = FALSE)
+  change_case_from_spec(table_list, table_spec,
+                        from_case = "snake", to_case = NULL,
+                        add_missing = FALSE)
 
 }
