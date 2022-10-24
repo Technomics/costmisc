@@ -98,8 +98,8 @@ coerce_to_spec <- function(table_list, table_spec, .fn_date = as.Date) {
 
   # function to apply for a given SQL type
   r_to_sql_fns <- list(VARCHAR = as.character,
-                       LONG = function(x) as.integer(readr::parse_number(x)),
-                       DOUBLE = readr::parse_number,
+                       LONG = function(x) as.integer(readr::parse_number(as.character(x))),
+                       DOUBLE = function(x) readr::parse_number(as.character(x)),
                        BIT = as.logical,
                        DATETIME = .fn_date)
 
