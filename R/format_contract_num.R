@@ -10,7 +10,7 @@
 #'
 #' @return A character string in the specified format.
 #'
-#' @examples \preformatted{
+#' @examples
 #' # control the output with the two logical parameters
 #' format_contract("FA8616-14-D-6060:0001",
 #'                 hyphenated = TRUE,
@@ -24,7 +24,6 @@
 #' format_contract("FA862015C4040",
 #'                 hyphenated = FALSE,
 #'                 master_only = FALSE)
-#' }
 #'
 #' @export
 format_contract <- function(contract, hyphenated = TRUE, master_only = FALSE) {

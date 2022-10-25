@@ -4,7 +4,13 @@
 \alias{check_spec}
 \title{Check file specification}
 \usage{
-check_spec(table_list, table_spec, type_label = "Import File", .silent = TRUE)
+check_spec(
+  table_list,
+  table_spec,
+  type_label = "Import File",
+  .silent = TRUE,
+  .include_table_type = NULL
+)
 }
 \arguments{
 \item{table_list}{A list of data frames to check against the spec.}
@@ -14,6 +20,10 @@ check_spec(table_list, table_spec, type_label = "Import File", .silent = TRUE)
 \item{type_label}{A character label for the check message.}
 
 \item{.silent}{Logical whether or not to print results to the console.}
+
+\item{.include_table_type}{Character vector of 'type' values from the spec
+'tables' to include in the check. Useful to remove certain table types, such
+as enumerations. If \code{NULL}, all tables are included.}
 }
 \value{
 A list containing the results of the check.

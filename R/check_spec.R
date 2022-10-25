@@ -7,15 +7,34 @@
 #' @param table_spec The table spec. See details.
 #' @param type_label A character label for the check message.
 #' @param .silent Logical whether or not to print results to the console.
+#' @param .include_table_type Character vector of 'type' values from the spec
+#' 'tables' to include in the check. Useful to remove certain table types, such
+#' as enumerations. If \code{NULL}, all tables are included.
 #'
 #' @return A list containing the results of the check.
 #' @family Data Spec Functions
 #'
 #' @export
-check_spec <- function(table_list, table_spec, type_label = "Import File", .silent = TRUE) {
+check_spec <- function(table_list, table_spec, type_label = "Import File",
+                       .silent = TRUE,
+                       .include_table_type = NULL) {
+
+  if (is.null(.include_table_type)) {
+    # table_spec_mod <- table_spec
+    #
+    # table_spec_mod$tables <- table_spec_mod$tables %>%
+    #   dplyr::filter(.data$type %in% .include_table_type)
+    #
+    # table_spec_mod$fields <- table_spec_mod$fields %>%
+    #   dplyr::filter(.data$table %in% table_spec_mod$tables$table)
+
+    .include_table_type <- unique(table_spec$tables$type)
+
+  }
 
   table_names <- names(table_list)
   check_table <- table_spec$tables %>%
+    dplyr::filter(.data$type %in% .include_table_type) %>%
     dplyr::pull(.data$table)
 
   # check table names
@@ -94,12 +113,13 @@ check_spec <- function(table_list, table_spec, type_label = "Import File", .sile
 #' @family Data Spec Functions
 #'
 #' @export
-coerce_to_spec <- function(table_list, table_spec, .fn_date = as.Date) {
+coerce_to_spec <- function(table_list, table_spec,
+                           .fn_date = as.Date) {
 
   # function to apply for a given SQL type
   r_to_sql_fns <- list(VARCHAR = as.character,
-                       LONG = function(x) as.integer(readr::parse_number(x)),
-                       DOUBLE = readr::parse_number,
+                       LONG = function(x) as.integer(readr::parse_number(as.character(x))),
+                       DOUBLE = function(x) readr::parse_number(as.character(x)),
                        BIT = as.logical,
                        DATETIME = .fn_date)
 
