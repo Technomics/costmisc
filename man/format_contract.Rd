@@ -20,7 +20,6 @@ A character string in the specified format.
 contract number, according to user controls for the output.
 }
 \examples{
-\preformatted{
 # control the output with the two logical parameters
 format_contract("FA8616-14-D-6060:0001",
                 hyphenated = TRUE,
@@ -34,6 +33,5 @@ format_contract("FA8620-15-G-4040-FA8620-15-F-4040",
 format_contract("FA862015C4040",
                 hyphenated = FALSE,
                 master_only = FALSE)
-}
 
 }

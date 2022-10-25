@@ -81,14 +81,14 @@ change_case_from_spec <- function(table_list, table_spec,
     }
 
     # the check is required to add in missing
-    check <- check_spec(table_list, table_spec_add,
+    check <- check_spec(table_list, table_spec,
                         .silent = TRUE,
                         .include_table_type = add_missing_by_type)
 
     # add in the missing tables and columns in the base case
     table_list <- table_list %>%
-      add_missing_spec_tables(table_spec_add, check) %>%
-      add_missing_spec_cols(table_spec_add, new_name = "field")
+      add_missing_spec_tables(table_spec, check) %>%
+      add_missing_spec_cols(table_spec, new_name = "field")
 
     # if there is a to_case, round trip the field names to this
     if (!is.null(to_case)) {
