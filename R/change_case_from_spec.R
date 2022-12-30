@@ -6,10 +6,9 @@
 #' @details This function relies on names from a spec file. In order for this to work
 #' consistently, a few things are assumed.\cr
 #' \cr
-#' The base case (or original/native case) tables are specified by the column named
-#' 'table' in both the 'tables' and 'fields' data frames of the spec. The fields
-#' for the base case are specified by the column named 'field' in the 'fields data
-#' frame of the spec.\cr
+#' The 'native' case tables are specified by the column named 'table' in both the 'tables'
+#' and 'fields' data frames of the spec. The fields for the native case are specified by the
+#' column named 'field' in the 'fields data frame of the spec.\cr
 #' \cr
 #' Any other valid case (e.g., 'new_case') specifies the table name in the 'tables' data
 #' frame with the suffix "_table" (e.g., 'new_case_table'). The field names are specified in
@@ -21,9 +20,9 @@
 #' @param table_list A list of tables to rename.
 #' @param table_spec Data model specification object.
 #' @param from_case String name of the case the object originates from. If \code{NULL},
-#' defaults to the base case.
+#' defaults to the 'native' case.
 #' @param to_case String name of the case to convert to. If \code{NULL},
-#' defaults to the base case.
+#' defaults to the 'native' case.
 #' @param add_missing Logical whether to add in missing tables and columns.
 #' @param add_missing_by_type Character vector of values from the spec 'type' column.
 #' Only tables of this type will be added back in if \code{add_missing = TRUE}.
@@ -73,9 +72,9 @@ change_case_from_spec <- function(table_list, table_spec,
 
   # change field names
   if (isTRUE(add_missing)) {
-    # to add in missing, we need to round trip it back to base first
+    # to add in missing, we need to round trip it back to native first
 
-    # if there is a from_case, take back to the base case
+    # if there is a from_case, take back to the native case
     if (!is.null(from_case)) {
       table_list <- purrr::imodify(table_list, rename_columns, from_name = from_field_name, to_name = "field")
     }
@@ -85,7 +84,7 @@ change_case_from_spec <- function(table_list, table_spec,
                         .silent = TRUE,
                         .include_table_type = add_missing_by_type)
 
-    # add in the missing tables and columns in the base case
+    # add in the missing tables and columns in the native case
     table_list <- table_list %>%
       add_missing_spec_tables(table_spec, check) %>%
       add_missing_spec_cols(table_spec, new_name = "field")
@@ -120,7 +119,7 @@ change_case_from_spec <- function(table_list, table_spec,
 #' @rdname change_case_from_spec
 #'
 #' @export
-data_model_to_snake <- function(table_list, table_spec) {
+native_to_snake_case <- function(table_list, table_spec) {
 
   change_case_from_spec(table_list, table_spec,
                         from_case = NULL, to_case = "snake",
@@ -137,10 +136,45 @@ data_model_to_snake <- function(table_list, table_spec) {
 #' @rdname change_case_from_spec
 #'
 #' @export
-snake_to_data_model <- function(table_list, table_spec) {
+snake_to_native_case <- function(table_list, table_spec) {
 
   change_case_from_spec(table_list, table_spec,
                         from_case = "snake", to_case = NULL,
                         add_missing = FALSE)
+
+}
+
+#' Convert table names
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `data_model_to_snake()` was renamed to `native_to_snake_case()` to make the function
+#' general in name.
+#'
+#' @keywords internal
+#' @export
+data_model_to_snake <- function(table_list, table_spec) {
+
+  lifecycle::deprecate_warn("0.7.1", "data_model_to_snake()", "native_to_snake_case()")
+
+  native_to_snake_case(table_list, table_spec)
+}
+
+#' Convert table names
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' `snake_to_data_model()` was renamed to `snake_to_native_case()` to make the function
+#' general in name.
+#'
+#' @keywords internal
+#' @export
+snake_to_data_model <- function(table_list, table_spec) {
+
+  lifecycle::deprecate_warn("0.7.1", "snake_to_data_model()", "snake_to_native_case()")
+
+  snake_to_native_case(table_list, table_spec)
 
 }

@@ -2,8 +2,8 @@
 % Please edit documentation in R/change_case_from_spec.R
 \name{change_case_from_spec}
 \alias{change_case_from_spec}
-\alias{data_model_to_snake}
-\alias{snake_to_data_model}
+\alias{native_to_snake_case}
+\alias{snake_to_native_case}
 \title{Convert table name and field case}
 \usage{
 change_case_from_spec(
@@ -15,9 +15,9 @@ change_case_from_spec(
   add_missing_by_type = NULL
 )
 
-data_model_to_snake(table_list, table_spec)
+native_to_snake_case(table_list, table_spec)
 
-snake_to_data_model(table_list, table_spec)
+snake_to_native_case(table_list, table_spec)
 }
 \arguments{
 \item{table_list}{A list of tables to rename.}
@@ -25,10 +25,10 @@ snake_to_data_model(table_list, table_spec)
 \item{table_spec}{Data model specification object.}
 
 \item{from_case}{String name of the case the object originates from. If \code{NULL},
-defaults to the base case.}
+defaults to the 'native' case.}
 
 \item{to_case}{String name of the case to convert to. If \code{NULL},
-defaults to the base case.}
+defaults to the 'native' case.}
 
 \item{add_missing}{Logical whether to add in missing tables and columns.}
 
@@ -49,10 +49,9 @@ to convert from snake_case to data model notation.
 This function relies on names from a spec file. In order for this to work
 consistently, a few things are assumed.\cr
 \cr
-The base case (or original/native case) tables are specified by the column named
-'table' in both the 'tables' and 'fields' data frames of the spec. The fields
-for the base case are specified by the column named 'field' in the 'fields data
-frame of the spec.\cr
+The 'native' case tables are specified by the column named 'table' in both the 'tables'
+and 'fields' data frames of the spec. The fields for the native case are specified by the
+column named 'field' in the 'fields data frame of the spec.\cr
 \cr
 Any other valid case (e.g., 'new_case') specifies the table name in the 'tables' data
 frame with the suffix "_table" (e.g., 'new_case_table'). The field names are specified in
@@ -65,7 +64,9 @@ either \code{from_case} or \code{to_case}.
 Other Data Spec Functions: 
 \code{\link{add_missing_spec_cols}()},
 \code{\link{add_missing_spec_tables}()},
+\code{\link{assert_case}()},
 \code{\link{check_spec}()},
-\code{\link{coerce_to_spec}()}
+\code{\link{coerce_to_spec}()},
+\code{\link{data_case}()}
 }
 \concept{Data Spec Functions}

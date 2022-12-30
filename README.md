@@ -13,10 +13,10 @@ maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www
 v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![R build
 status](https://github.com/Technomics/costmisc/workflows/R-CMD-check/badge.svg)](https://github.com/Technomics/costmisc/actions)
-[![coverage:
-56.5%25](https://img.shields.io/badge/coverage-56.5%25-yellow.svg)](https://cran.r-project.org/web/packages/covr/vignettes/how_it_works.html)
 [![version:
-0.7.0](https://img.shields.io/badge/version-0.7.0-blue.svg)]()
+0.7.1](https://img.shields.io/badge/version-0.7.1-blue.svg)]()
+[![coverage:
+25.4%25](https://img.shields.io/badge/coverage-25.4%25-orange.svg)](https://cran.r-project.org/web/packages/covr/vignettes/how_it_works.html)
 <!-- badges: end -->
 
 The package costmisc adds miscellaneous functions to the costverse that
@@ -46,9 +46,8 @@ to use them under the
 [GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html) - all that we ask
 is to please cite us as the authors.
 
--   [costmisc](https://github.com/Technomics/costmisc/)
--   [readflexfile](https://github.com/Technomics/readflexfile/)
--   [flexample](https://github.com/Technomics/flexample/)
+- [costmisc](https://github.com/Technomics/costmisc/)
+- [readflexfile](https://github.com/Technomics/readflexfile/)
 
 Do not hesitate to contact us if you have questions about what else is
 in the works!

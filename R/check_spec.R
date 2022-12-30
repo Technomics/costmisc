@@ -217,4 +217,52 @@ add_missing_spec_tables <- function(table_list, table_spec, checked_spec) {
   c(table_list, new_tables)
 }
 
+#' Attribute access functions
+#'
+#' Returns the namesake attribute.
+#'
+#' @param x An object to check.
+#'
+#' @family Data Spec Functions
+#'
+#' @export
+data_case <- function(x) {
+  attr(x, "data_case")
+}
+
+#' Attribute access functions
+#'
+#' @rdname data_case
+#'
+#' @export
+data_spec <- function(x) {
+  attr(x, "data_spec")
+}
+
+#' Assert the data case onto the object
+#'
+#' \code{assert_case()} checks an object for what case the tables and fields are in
+#' and converts them to the \code{target_case} us required.\cr
+#' \cr
+#' Requires the object to have the \code{data_case} attribute.
+#'
+#' @param x An object to assert case.
+#' @param target_case The case to transform it to.
+#' @param .table_spec A file specification list. Defaults to deriving from the object.
+#'
+#' @family Data Spec Functions
+#'
+#' @export
+assert_case <- function(x, target_case = "snake", .table_spec = data_spec(x)) {
+  current_case <- data_case(x)
+  if (is.null(target_case)) target_case <- "native"
+
+  if (current_case == target_case) return(x)
+
+  # the native case is passed in as NULL
+  if (current_case == "native") current_case <- NULL
+  if (target_case == "native") target_case <- NULL
+
+  costmisc::change_case_from_spec(x, .table_spec, current_case, target_case)
+}
 
