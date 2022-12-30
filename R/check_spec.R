@@ -116,6 +116,8 @@ check_spec <- function(table_list, table_spec, type_label = "Import File",
 coerce_to_spec <- function(table_list, table_spec,
                            .fn_date = as.Date) {
 
+  # written mostly in base instead of tidy for 10x execution time speed up
+
   # function to apply for a given SQL type
   r_to_sql_fns <- list(VARCHAR = as.character,
                        LONG = function(x) as.integer(readr::parse_number(as.character(x))),
@@ -127,16 +129,15 @@ coerce_to_spec <- function(table_list, table_spec,
   coerce_table <- function(the_df, table_name) {
 
     # subset the field types
-    table_fields <- table_spec$fields %>%
-      dplyr::filter(table == table_name) %>%
-      dplyr::select(.data$field, .data$type)
+    table_fields <- table_spec$fields[table_spec$fields$table == table_name, c("field", "type")]
 
     # function to coerce all columns of a given type in the data frame
     coerce_to <- function(new_type, the_df) {
-      the_cols <- dplyr::filter(table_fields, .data$type == new_type)$field
-      if (length(the_cols) == 0) return(the_df)
+      the_cols <- table_fields$field[table_fields$type == new_type]
 
-      dplyr::mutate(the_df, dplyr::across(dplyr::any_of(the_cols), r_to_sql_fns[new_type], .names = "{.col}"))
+      if (length(the_cols) == 0) return(the_df)
+      the_df[the_cols] <- lapply(the_df[the_cols], r_to_sql_fns[[new_type]])
+      the_df
     }
 
     # loop over each type - this accumulates so using a for loop (can use purrr::accumulate)
