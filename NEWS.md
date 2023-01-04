@@ -1,3 +1,10 @@
+# costmisc 0.7.1
+
+* Improved ability to work with different cases from the file spec.
+  * Renamed the "base" case to "native" which is more descriptive. Adjusted functions to now refer to this "native" case as such instead of using the term "data model". This resulted in the name change of `data_model_to_snake()` and `snake_to_data_model()` to `native_to_snake_case()` and `snake_to_native_case()`, respectively.
+  * Added in functions to pull the `data_case` and `data_spec` attributes from objects.
+  * Added in function `assert_case()` to check if an object is in the correct case, and correct if needed. This should rarely be used. It is better to simply use one consistent case. However, some older packages applied an ill-advised naming convention, so this is used to improve the names but not break old code. (#23)
+
 # costmisc 0.7.0
 
 * Added in function `change_case_from_spec()` to allow easy changing of case from a file spec. Moved and re-factored code for `data_model_to_snake()` and `snake_to_data_model()` from `readflexfile` to utilize this new function.

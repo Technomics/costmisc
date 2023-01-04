@@ -23,7 +23,9 @@ Coerce data types to the specification
 Other Data Spec Functions: 
 \code{\link{add_missing_spec_cols}()},
 \code{\link{add_missing_spec_tables}()},
+\code{\link{assert_case}()},
 \code{\link{change_case_from_spec}()},
-\code{\link{check_spec}()}
+\code{\link{check_spec}()},
+\code{\link{data_case}()}
 }
 \concept{Data Spec Functions}

@@ -35,7 +35,9 @@ A list containing the results of the check.
 Other Data Spec Functions: 
 \code{\link{add_missing_spec_cols}()},
 \code{\link{add_missing_spec_tables}()},
+\code{\link{assert_case}()},
 \code{\link{change_case_from_spec}()},
-\code{\link{coerce_to_spec}()}
+\code{\link{coerce_to_spec}()},
+\code{\link{data_case}()}
 }
 \concept{Data Spec Functions}
