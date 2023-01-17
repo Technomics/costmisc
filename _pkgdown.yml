@@ -8,6 +8,7 @@ reference:
   - read_excel_table
   - read_json_zip
   - write_json_zip
+  - fix_json_null
 - title: File Spec
   contents:
   - change_case_from_spec
@@ -36,3 +37,6 @@ reference:
   contents:
   - clean_by
   - paste_difftime
+  - add_missing_column
+  - check_pkg_suggests
+  - format_contract
