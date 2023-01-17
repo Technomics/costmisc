@@ -35,6 +35,11 @@ change_case_from_spec <- function(table_list, table_spec,
                                   add_missing = FALSE,
                                   add_missing_by_type = NULL) {
 
+  if (!identical(names(table_spec), c("tables", "fields")))
+    stop("Invalid 'table_spec'.")
+
+  original_table_list <- table_list
+
   if (is.null(from_case)) {
     from_table_name <- "table"
     from_field_name <- "field"
@@ -106,20 +111,24 @@ change_case_from_spec <- function(table_list, table_spec,
     names(table_list) <- final_table_names[names(table_list)]
   }
 
+  # assign attributes
+  table_list <- copy_attributes_spec(original_table_list, table_list)
+  attr(table_list, "data_case") <- to_case
+
   table_list
 
 }
 
 #' Convert table names
 #'
-#' \code{data_model_to_snake()} is a convenience wrapper around \code{\link{change_case_from_spec}()}
-#' to convert from data model notation to snake_case. This function will also add any missing columns
+#' \code{native_to_snake_case()} is a convenience wrapper around \code{\link{change_case_from_spec}()}
+#' to convert from native case to snake_case. This function will also add any missing columns
 #' from the spec to the model.
 #'
 #' @rdname change_case_from_spec
 #'
 #' @export
-native_to_snake_case <- function(table_list, table_spec) {
+native_to_snake_case <- function(table_list, table_spec = data_spec(table_list)) {
 
   change_case_from_spec(table_list, table_spec,
                         from_case = NULL, to_case = "snake",
@@ -130,13 +139,13 @@ native_to_snake_case <- function(table_list, table_spec) {
 
 #' Convert table names
 #'
-#' \code{snake_to_data_model()} is a convenience wrapper around \code{\link{change_case_from_spec}()}
-#' to convert from snake_case to data model notation.
+#' \code{snake_to_native_case()} is a convenience wrapper around \code{\link{change_case_from_spec}()}
+#' to convert from snake_case to the native case.
 #'
 #' @rdname change_case_from_spec
 #'
 #' @export
-snake_to_native_case <- function(table_list, table_spec) {
+snake_to_native_case <- function(table_list, table_spec = data_spec(table_list)) {
 
   change_case_from_spec(table_list, table_spec,
                         from_case = "snake", to_case = NULL,

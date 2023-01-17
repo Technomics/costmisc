@@ -1,3 +1,8 @@
+# costmisc 0.7.2
+
+* Added in the `validate_data()` generic.
+* Fixed a bug related to the classes being dropped when changing case. (#28)
+
 # costmisc 0.7.1
 
 * Improved ability to work with different cases from the file spec.

@@ -15,9 +15,9 @@ change_case_from_spec(
   add_missing_by_type = NULL
 )
 
-native_to_snake_case(table_list, table_spec)
+native_to_snake_case(table_list, table_spec = data_spec(table_list))
 
-snake_to_native_case(table_list, table_spec)
+snake_to_native_case(table_list, table_spec = data_spec(table_list))
 }
 \arguments{
 \item{table_list}{A list of tables to rename.}
@@ -38,12 +38,12 @@ Only tables of this type will be added back in if \code{add_missing = TRUE}.}
 \description{
 \code{change_case_from_spec()} renames from one case to another from the file spec.
 
-\code{data_model_to_snake()} is a convenience wrapper around \code{\link{change_case_from_spec}()}
-to convert from data model notation to snake_case. This function will also add any missing columns
+\code{native_to_snake_case()} is a convenience wrapper around \code{\link{change_case_from_spec}()}
+to convert from native case to snake_case. This function will also add any missing columns
 from the spec to the model.
 
-\code{snake_to_data_model()} is a convenience wrapper around \code{\link{change_case_from_spec}()}
-to convert from snake_case to data model notation.
+\code{snake_to_native_case()} is a convenience wrapper around \code{\link{change_case_from_spec}()}
+to convert from snake_case to the native case.
 }
 \details{
 This function relies on names from a spec file. In order for this to work

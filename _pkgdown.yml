@@ -8,6 +8,16 @@ reference:
   - read_excel_table
   - read_json_zip
   - write_json_zip
+- title: File Spec
+  contents:
+  - change_case_from_spec
+  - check_spec
+  - coerce_to_spec
+  - add_missing_spec_cols
+  - add_missing_spec_tables
+  - data_case
+  - data_spec
+  - assert_case
 - title: Lists
   contents:
   - add_id_col
@@ -21,6 +31,7 @@ reference:
 - title: Generics
   contents:
   - flatten_data
+  - validate_data
 - title: Misc
   contents:
   - clean_by
