@@ -20,6 +20,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -32,18 +34,12 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">costmisc</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.7.2</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="reference/index.html">Reference</a>
 </li>
@@ -53,7 +49,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/Technomics/costmisc/">
+  <a href="https://github.com/Technomics/costmisc/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -70,40 +66,41 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="costmisc" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#costmisc" class="anchor"></a>costmisc</h1></div>
+<div class="section level1">
+<div class="page-header"><h1 id="costmisc">costmisc<a class="anchor" aria-label="anchor" href="#costmisc"></a>
+</h1></div>
 <!-- badges: start -->
 
 <p>The package costmisc adds miscellaneous functions to the costverse that support various other packages.</p>
-<p>Check out the <a href="https://technomics.github.io/costmisc/">pkgdown</a> site to browse the features!</p>
-<p>If you find a bug or have an idea for a new feature, please use the <a href="https://github.com/Technomics/costmisc/issues">issue board</a>.</p>
-<div id="welcome-to-the-costverse" class="section level2">
-<h2 class="hasAnchor">
-<a href="#welcome-to-the-costverse" class="anchor"></a>Welcome to the costverse!</h2>
+<p>Check out the <a href="https://technomics.github.io/costmisc/" class="external-link">pkgdown</a> site to browse the features!</p>
+<p>If you find a bug or have an idea for a new feature, please use the <a href="https://github.com/Technomics/costmisc/issues" class="external-link">issue board</a>.</p>
+<div class="section level2">
+<h2 id="welcome-to-the-costverse">Welcome to the costverse!<a class="anchor" aria-label="anchor" href="#welcome-to-the-costverse"></a>
+</h2>
 <p>The <em>costverse</em> is a collection of R packages, inspired by the <em>tidyverse</em>. The goal is to create a cohesive ecosystem of R packages to streamline tasks encountered by analysts in the cost analysis profession. This can range from importing common data formats, working with difficult data structures (e.g., a WBS), or applying more advanced analytical techniques!</p>
-<p>The <em>costverse</em> began as an internal <a href="https://www.technomics.net/">Technomics</a> project to develop a set of tools that enable our employee owners to solve our clients’ problems more effectively. While aspects of the project remain internal, the following packages are currently available to the public. You are free to use them under the <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPLv3</a> - all that we ask is to please cite us as the authors.</p>
+<p>The <em>costverse</em> began as an internal <a href="https://www.technomics.net/" class="external-link">Technomics</a> project to develop a set of tools that enable our employee owners to solve our clients’ problems more effectively. While aspects of the project remain internal, the following packages are currently available to the public. You are free to use them under the <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" class="external-link">GPLv3</a> - all that we ask is to please cite us as the authors.</p>
 <ul>
-<li><a href="https://github.com/Technomics/costmisc/">costmisc</a></li>
-<li><a href="https://github.com/Technomics/readflexfile/">readflexfile</a></li>
-<li><a href="https://github.com/Technomics/flexample/">flexample</a></li>
+<li><a href="https://github.com/Technomics/costmisc/" class="external-link">costmisc</a></li>
+<li><a href="https://github.com/Technomics/readflexfile/" class="external-link">readflexfile</a></li>
 </ul>
 <p>Do not hesitate to contact us if you have questions about what else is in the works!</p>
 </div>
-<div id="installation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
-<p>First install the package devtools if you haven’t already.</p>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
+<p>The stable version can be installed directly from the Technomics repository.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co">#install.packages("devtools")</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"costmisc"</span>, repos <span class="op">=</span> <span class="st">"https://technomics.github.io/repo/"</span><span class="op">)</span></code></pre></div>
-<div id="development-version" class="section level3">
-<h3 class="hasAnchor">
-<a href="#development-version" class="anchor"></a>Development version</h3>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"costmisc"</span>, repos <span class="op">=</span> <span class="st">"https://technomics.github.io/repo/"</span><span class="op">)</span></span></code></pre></div>
+<div class="section level3">
+<h3 id="development-version">Development version<a class="anchor" aria-label="anchor" href="#development-version"></a>
+</h3>
 <p>To get a bug fix, or to use a feature from the development version, you can install costmisc using the following.</p>
+<p>First install the package devtools if you haven’t already.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">devtools</span><span class="fu">::</span><span class="fu">dev_mode</span><span class="op">(</span>on <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"Technomics/costmisc"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co">#install.packages("devtools")</span></span>
+<span></span>
+<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">dev_mode</span><span class="op">(</span>on <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"Technomics/costmisc"</span><span class="op">)</span></span></code></pre></div>
 </div>
 </div>
 </div>
@@ -111,53 +108,59 @@
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
-<h2>Links</h2>
+<h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li>Browse source code at <br><a href="https://github.com/Technomics/costmisc/">https://​github.com/​Technomics/​costmisc/​</a>
-</li>
+<li><a href="https://github.com/Technomics/costmisc/" class="external-link">Browse source code</a></li>
 </ul>
 </div>
+
 <div class="license">
-<h2>License</h2>
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
 <li><a href="LICENSE.html">Full license</a></li>
-<li><small><a href="https://www.r-project.org/Licenses/GPL-3">GPL-3</a></small></li>
+<li><small><a href="https://www.r-project.org/Licenses/GPL-3" class="external-link">GPL-3</a></small></li>
 </ul>
 </div>
+
+
 <div class="citation">
-<h2>Citation</h2>
+<h2 data-toc-skip>Citation</h2>
 <ul class="list-unstyled">
-<li><a href="authors.html">Citing costmisc</a></li>
+<li><a href="authors.html#citation">Citing costmisc</a></li>
 </ul>
 </div>
+
 <div class="developers">
-<h2>Developers</h2>
+<h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
 <li>Adam H. James <br><small class="roles"> Maintainer, author </small>  </li>
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/technomics"><img src="https://img.shields.io/badge/technomics-costverse-EAC435.svg" alt="technomics: costverse"></a></li>
-<li><a href="https://www.tidyverse.org/lifecycle/#maturing"><img src="https://img.shields.io/badge/lifecycle-maturing-blue.svg" alt="Lifecycle: maturing"></a></li>
-<li><a href="https://www.gnu.org/licenses/gpl-3.0"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="License: GPL v3"></a></li>
-<li><a href="https://github.com/Technomics/costmisc/actions"><img src="https://github.com/Technomics/costmisc/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
-<li><a href="https://cran.r-project.org/web/packages/covr/vignettes/how_it_works.html"><img src="https://img.shields.io/badge/coverage-60.3%25-yellow.svg" alt="coverage: 60.3%25"></a></li>
-<li><a href=""><img src="https://img.shields.io/badge/version-0.6.3-blue.svg" alt="version: 0.6.3"></a></li>
+<li><a href="https://github.com/technomics" class="external-link"><img src="https://img.shields.io/badge/technomics-costverse-EAC435.svg" alt="technomics: costverse"></a></li>
+<li><a href="https://www.tidyverse.org/lifecycle/#maturing" class="external-link"><img src="https://img.shields.io/badge/lifecycle-maturing-blue.svg" alt="Lifecycle: maturing"></a></li>
+<li><a href="https://www.gnu.org/licenses/gpl-3.0" class="external-link"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="License: GPL v3"></a></li>
+<li><a href="https://github.com/Technomics/costmisc/actions" class="external-link"><img src="https://github.com/Technomics/costmisc/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
+<li><a href=""><img src="https://img.shields.io/badge/version-0.7.2-blue.svg" alt="version: 0.7.2"></a></li>
+<li><a href="https://cran.r-project.org/web/packages/covr/vignettes/how_it_works.html" class="external-link"><img src="https://img.shields.io/badge/coverage-25.4%25-orange.svg" alt="coverage: 25.4%25"></a></li>
 </ul>
 </div>
-</div>
+
+  </div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by Adam H. James.</p>
+  <p></p>
+<p>Developed by Adam H. James.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer>
@@ -165,6 +168,8 @@
 
   
 
+
+  
 
   </body>
 </html>
