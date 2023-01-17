@@ -63,10 +63,6 @@ usethis::use_package("lifecycle")
 
 ## ===== README & NEWS =====
 
-# Readme setup with RMarkdown
-usethis::use_readme_rmd()
-usethis::use_news_md()
-
 rnomics::use_badge_costverse()
 usethis::use_lifecycle_badge("maturing")
 rnomics::use_badge_prop()
@@ -105,3 +101,12 @@ rnomics::add_to_drat(c(bin_build_file, src_build_file), drat_repo)
 
 ## ===== Scratch Work =====
 
+library(readflexfile)
+
+file_ff <- system.file("extdata", "cerberus", "Annual Submission 2016_flexfile.zip", package = "reviewcsdr")
+file_qdr <- system.file("extdata", "cerberus", "Annual Submission 2016_quantity.zip", package = "reviewcsdr")
+
+flexfile <- read_flexfile(file_ff)
+quantity <- read_flexfile(file_qdr)
+
+is_flexfile(native_to_snake_case(flexfile))
