@@ -273,7 +273,8 @@ copy_attributes_spec <- function(old, new) {
 
   # store the attributes
   old_attributes <- attributes(old)
-  old_attributes <- old_attributes[!names(old_attributes) %in% reserved_attr]
+  old_attributes <- c(old_attributes[!names(old_attributes) %in% reserved_attr],
+                      names = list(attr(new, "names")))
 
   mostattributes(new) <- old_attributes
 
