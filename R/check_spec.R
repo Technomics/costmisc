@@ -263,7 +263,7 @@ assert_case <- function(x, target_case = "snake", .table_spec = data_spec(x)) {
   if (current_case == "native") current_case <- NULL
   if (target_case == "native") target_case <- NULL
 
-  costmisc::change_case_from_spec(x, .table_spec, current_case, target_case)
+  change_case_from_spec(x, .table_spec, current_case, target_case)
 }
 
 #' @keywords internal
@@ -273,7 +273,8 @@ copy_attributes_spec <- function(old, new) {
 
   # store the attributes
   old_attributes <- attributes(old)
-  old_attributes <- old_attributes[!names(old_attributes) %in% reserved_attr]
+  old_attributes <- c(old_attributes[!names(old_attributes) %in% reserved_attr],
+                      names = list(attr(new, "names")))
 
   mostattributes(new) <- old_attributes
 

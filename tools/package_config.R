@@ -109,4 +109,4 @@ file_qdr <- system.file("extdata", "cerberus", "Annual Submission 2016_quantity.
 flexfile <- read_flexfile(file_ff)
 quantity <- read_flexfile(file_qdr)
 
-is_flexfile(native_to_snake_case(flexfile))
+native_to_snake_case(flexfile)

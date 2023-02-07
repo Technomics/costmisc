@@ -113,7 +113,7 @@ change_case_from_spec <- function(table_list, table_spec,
 
   # assign attributes
   table_list <- copy_attributes_spec(original_table_list, table_list)
-  attr(table_list, "data_case") <- to_case
+  attr(table_list, "data_case") <- ifelse(is.null(to_case), "native", to_case)
 
   table_list
 
