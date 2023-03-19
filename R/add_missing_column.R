@@ -23,6 +23,6 @@
 add_missing_column <- function(.data, ..., .before = NULL, .after = NULL, .name_repair = c("check_unique", "unique", "universal", "minimal")) {
   .dots <- rlang::enquos(...)
 
-  cols_to_add <- .dots[!names(.dots) %in% names(.data)]
+  cols_to_add <- .dots[!names(.dots) %in% colnames(.data)]
   tibble::add_column(.data, !!!cols_to_add, .before = .before, .after = .after, .name_repair = .name_repair)
 }
