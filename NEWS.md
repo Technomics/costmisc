@@ -1,3 +1,7 @@
+# costmisc (development version)
+
+* Minor fixes to make functions some functions more compatible with dtplyr. This includes `add_missing_column()`.
+
 # costmisc 0.7.3
 
 * Fixed a bug with `assert_case()` when moving back to "native". In certain cases it was possible for the `data_case` attribute to be dropped. (#32)
