@@ -101,12 +101,12 @@ rnomics::add_to_drat(c(bin_build_file, src_build_file), drat_repo)
 
 ## ===== Scratch Work =====
 
-library(readflexfile)
-
-file_ff <- system.file("extdata", "cerberus", "Annual Submission 2016_flexfile.zip", package = "reviewcsdr")
-file_qdr <- system.file("extdata", "cerberus", "Annual Submission 2016_quantity.zip", package = "reviewcsdr")
-
-flexfile <- read_flexfile(file_ff)
-quantity <- read_flexfile(file_qdr)
-
-native_to_snake_case(flexfile)
+# library(readflexfile)
+#
+# file_ff <- system.file("extdata", "cerberus", "Annual Submission 2016_flexfile.zip", package = "reviewcsdr")
+# file_qdr <- system.file("extdata", "cerberus", "Annual Submission 2016_quantity.zip", package = "reviewcsdr")
+#
+# flexfile <- read_flexfile(file_ff)
+# quantity <- read_flexfile(file_qdr)
+#
+# native_to_snake_case(flexfile)
