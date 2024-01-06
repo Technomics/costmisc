@@ -1,4 +1,4 @@
-# costmisc (development version)
+# costmisc 0.7.4
 
 * Minor fixes to make functions some functions more compatible with dtplyr. This includes `add_missing_column()`.
 
