@@ -95,18 +95,32 @@ fs::dir_create(unlist(build_path))
 
 bin_build_file <- devtools::build(binary = TRUE, path = build_path$bin)
 src_build_file <- devtools::build(path = build_path$src)
+#src_build_file <- NULL
 
 drat_repo <- file.path(setupr::get_dirs()$git_local, "costverse", "repo")
 rnomics::add_to_drat(c(bin_build_file, src_build_file), drat_repo)
 
+## If Pull and Push not working with git2r, pull run below, then push manually
+pkg_files <- c(bin_build_file, src_build_file)
+invisible(lapply(pkg_files,
+                 drat::insertPackage, repodir = file.path(drat_repo, "docs")))
+drat::archivePackages(file.path(drat_repo, "docs"))
+git2r::add(drat_repo, path = paste0(drat_repo, "/*"))
+git_status <- git2r::status(drat_repo)
+commit_msg <- paste0("Added packages to drat\n\n",
+                     paste(paste(" - ",
+                                 c(paste("R version", rnomics::r_version()), basename(pkg_files))),
+                           collapse = "\n"))
+git2r::commit(drat_repo, message = commit_msg)
+
 ## ===== Scratch Work =====
 
-library(readflexfile)
-
-file_ff <- system.file("extdata", "cerberus", "Annual Submission 2016_flexfile.zip", package = "reviewcsdr")
-file_qdr <- system.file("extdata", "cerberus", "Annual Submission 2016_quantity.zip", package = "reviewcsdr")
-
-flexfile <- read_flexfile(file_ff)
-quantity <- read_flexfile(file_qdr)
-
-native_to_snake_case(flexfile)
+# library(readflexfile)
+#
+# file_ff <- system.file("extdata", "cerberus", "Annual Submission 2016_flexfile.zip", package = "reviewcsdr")
+# file_qdr <- system.file("extdata", "cerberus", "Annual Submission 2016_quantity.zip", package = "reviewcsdr")
+#
+# flexfile <- read_flexfile(file_ff)
+# quantity <- read_flexfile(file_qdr)
+#
+# native_to_snake_case(flexfile)

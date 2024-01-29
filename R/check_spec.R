@@ -164,9 +164,13 @@ coerce_to_spec <- function(table_list, table_spec,
 add_missing_spec_cols <- function(table_list, table_spec, new_name = "snake_name") {
 
   sql_to_r_types <- tibble::tibble(VARCHAR = NA_character_,
+                                   LONGTEXT = NA_character_,
                                    LONG = NA_integer_,
+                                   INTEGER = NA_integer_,
                                    DOUBLE = NA_real_,
+                                   DECIMAL = NA_real_,
                                    BIT = NA,
+                                   BOOLEAN = NA,
                                    DATETIME = NA_character_)
 
   # add any missing columns back in and rename

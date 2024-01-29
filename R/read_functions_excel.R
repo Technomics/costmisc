@@ -63,7 +63,7 @@ read_excel_table <- function(wb, table_name, table_df = NULL) {
   if (is.null(table_df))
     table_df <- get_excel_tables(wb)
 
-  range <- dplyr::select(dplyr::filter(table_df, .data$table == table_name), .data$sheet, .data$range)
+  range <- dplyr::select(dplyr::filter(table_df, .data$table == table_name), "sheet", "range")
 
   if (nrow(range) != 1) stop(paste0("Table \"", table_name, "\" not uniquely found"))
 
