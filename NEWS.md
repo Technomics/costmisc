@@ -1,6 +1,10 @@
+# costmisc 0.7.5
+
+* Expanded data types in the various spec functions. Now includes 'INTEGER', 'BOOLEAN', 'DECIMAL', and 'LONGTEXT' as options to map back to the most appropriate R base data types (integer, logical, double, and character, respectively).
+
 # costmisc 0.7.4
 
-* Minor fixes to make functions some functions more compatible with dtplyr. This includes `add_missing_column()`.
+* Minor fixes to make functions some functions more compatible with dbplyr. This includes `add_missing_column()`.
 
 # costmisc 0.7.3
 
