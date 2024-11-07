@@ -1,3 +1,7 @@
+# costmisc 0.7.6
+
+* Fixed a potential bug in `read_folder()`. Certain file paths on windows would fail a regex match. This normalizes the paths to avoid the error.
+
 # costmisc 0.7.5
 
 * Expanded data types in the various spec functions. Now includes 'INTEGER', 'BOOLEAN', 'DECIMAL', and 'LONGTEXT' as options to map back to the most appropriate R base data types (integer, logical, double, and character, respectively).

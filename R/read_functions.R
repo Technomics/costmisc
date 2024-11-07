@@ -21,8 +21,10 @@
 read_folder <- function(folder, read_function, pattern = NULL, .clean_file_names = TRUE, .basename = FALSE,
                         .id = NULL, .recursive = TRUE, ...) {
 
-  file_vector <- list.files(path = folder, pattern = pattern, full.names = TRUE, recursive = .recursive)
-  file_names <- stringr::str_remove(file_vector, folder)
+  .path = normalizePath(folder, winslash = "/")
+
+  file_vector <- list.files(path = .path, pattern = pattern, full.names = TRUE, recursive = .recursive)
+  file_names <- stringr::str_remove(file_vector, stringr::fixed(.path))
   if (.basename) file_names <- basename(file_names)
 
   read_function_try <- function(x, ...) {
