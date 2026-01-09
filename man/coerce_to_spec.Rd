@@ -2,7 +2,7 @@
 % Please edit documentation in R/check_spec.R
 \name{coerce_to_spec}
 \alias{coerce_to_spec}
-\title{Coerce data types to the specification}
+\title{Coerce tables to a data specification}
 \usage{
 coerce_to_spec(table_list, table_spec, .fn_date = as.Date)
 }
@@ -11,13 +11,30 @@ coerce_to_spec(table_list, table_spec, .fn_date = as.Date)
 
 \item{table_spec}{The table spec. See details.}
 
-\item{.fn_date}{function for converting the SQL "DATETIME" type. Default
-\code{as.Date()} will only work with ISO dates. See
-\link[janitor]{excel_numeric_to_date} for a convenient function for Excel
-numerics.}
+\item{.fn_date}{Function used to coerce SQL \code{DATETIME} fields. Defaults
+to \code{as.Date()}, which assumes ISO-formatted dates. For Excel numeric
+dates, see \code{\link[janitor]{excel_numeric_to_date}}.}
+}
+\value{
+A named list of data frames with columns coerced to the types defined
+in \code{table_spec}.
 }
 \description{
-Coerce data types to the specification
+Coerces the columns of each data frame in \code{table_list} to the R data
+types defined in \code{table_spec}. Column coercion is driven by SQL-style
+field types and applied per table.
+}
+\details{
+Supported SQL-to-R coercions:
+\itemize{
+\item \code{VARCHAR} → \code{as.character()}
+\item \code{LONG} → integer via \code{readr::parse_number()} then \code{as.integer()}
+\item \code{INTEGER} → integer via \code{readr::parse_number()} then \code{as.integer()}
+\item \code{DOUBLE} → numeric via \code{readr::parse_number()}
+\item \code{BIT} → \code{as.logical()}
+\item \code{BOOLEAN} → \code{as.logical()}
+\item \code{DATETIME} → user-supplied function (\code{.fn_date})
+}
 }
 \seealso{
 Other Data Spec Functions: 

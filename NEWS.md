@@ -1,3 +1,7 @@
+# costmisc 0.7.7
+
+- Minor improvement to `coerce_to_spec()` adding 'INTEGER' alias to 'LONG' and 'BOOLEAN' alias to 'BIT'.
+
 # costmisc 0.7.6
 
 * Fixed a potential bug in `read_folder()`. Certain file paths on windows would fail a regex match. This normalizes the paths to avoid the error.

@@ -102,13 +102,30 @@ check_spec <- function(table_list, table_spec, type_label = "Import File",
 
 }
 
-#' Coerce data types to the specification
+#' Coerce tables to a data specification
+#'
+#' Coerces the columns of each data frame in \code{table_list} to the R data
+#' types defined in \code{table_spec}. Column coercion is driven by SQL-style
+#' field types and applied per table.
+#'
+#' Supported SQL-to-R coercions:
+#' \itemize{
+#'   \item \code{VARCHAR} → \code{as.character()}
+#'   \item \code{LONG} → integer via \code{readr::parse_number()} then \code{as.integer()}
+#'   \item \code{INTEGER} → integer via \code{readr::parse_number()} then \code{as.integer()}
+#'   \item \code{DOUBLE} → numeric via \code{readr::parse_number()}
+#'   \item \code{BIT} → \code{as.logical()}
+#'   \item \code{BOOLEAN} → \code{as.logical()}
+#'   \item \code{DATETIME} → user-supplied function (\code{.fn_date})
+#' }
 #'
 #' @inheritParams check_spec
-#' @param .fn_date function for converting the SQL "DATETIME" type. Default
-#'   \code{as.Date()} will only work with ISO dates. See
-#'   \link[janitor]{excel_numeric_to_date} for a convenient function for Excel
-#'   numerics.
+#' @param .fn_date Function used to coerce SQL \code{DATETIME} fields. Defaults
+#'   to \code{as.Date()}, which assumes ISO-formatted dates. For Excel numeric
+#'   dates, see \code{\link[janitor]{excel_numeric_to_date}}.
+#'
+#' @return A named list of data frames with columns coerced to the types defined
+#'   in \code{table_spec}.
 #'
 #' @family Data Spec Functions
 #'
@@ -121,8 +138,10 @@ coerce_to_spec <- function(table_list, table_spec,
   # function to apply for a given SQL type
   r_to_sql_fns <- list(VARCHAR = as.character,
                        LONG = function(x) as.integer(readr::parse_number(as.character(x))),
+                       INTEGER = function(x) as.integer(readr::parse_number(as.character(x))),
                        DOUBLE = function(x) readr::parse_number(as.character(x)),
                        BIT = as.logical,
+                       BOOLEAN = as.logical,
                        DATETIME = .fn_date)
 
   # function to alter a single table in the list
