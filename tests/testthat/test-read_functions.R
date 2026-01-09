@@ -84,12 +84,13 @@ test_that("functions for reading excel tables work", {
   expect_error(read_excel_table(wb, "tbl_fake"), "Table \"tbl_fake\" not uniquely found")
 })
 
-test_that("when openxlsx cannot be loaded an error triggers", {
-
-  with_mock(
-    requireNamespace = function(ns, quietly) FALSE,
-    expect_error(get_excel_tables(0, 0), "Package \"openxlsx\" needed for this function to work. Please install it."),
-    expect_error(read_excel_table(0, 0), "Package \"openxlsx\" needed for this function to work. Please install it.")
-  )
-
-})
+# with_mock() is sunset
+# test_that("when openxlsx cannot be loaded an error triggers", {
+#
+#   with_mock(
+#     requireNamespace = function(ns, quietly) FALSE,
+#     expect_error(get_excel_tables(0, 0), "Package \"openxlsx\" needed for this function to work. Please install it."),
+#     expect_error(read_excel_table(0, 0), "Package \"openxlsx\" needed for this function to work. Please install it.")
+#   )
+#
+# })

@@ -1,6 +1,6 @@
 Package: costmisc
 Title: Misc costverse functions
-Version: 0.7.6
+Version: 0.7.7
 Authors@R: 
     person(given = "Adam H.",
            family = "James",
@@ -30,7 +30,7 @@ Imports:
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.2
 RdMacros: lifecycle
 Suggests: 
     testthat,

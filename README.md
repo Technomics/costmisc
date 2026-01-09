@@ -13,10 +13,10 @@ maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www
 v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![R build
 status](https://github.com/Technomics/costmisc/workflows/R-CMD-check/badge.svg)](https://github.com/Technomics/costmisc/actions)
-[![version:
-0.7.6](https://img.shields.io/badge/version-0.7.6-blue.svg)]()
 [![coverage:
 24.4%25](https://img.shields.io/badge/coverage-24.4%25-red.svg)](https://cran.r-project.org/web/packages/covr/vignettes/how_it_works.html)
+[![version:
+0.7.7](https://img.shields.io/badge/version-0.7.7-blue.svg)]()
 <!-- badges: end -->
 
 The package costmisc adds miscellaneous functions to the costverse that
